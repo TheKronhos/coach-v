@@ -1,0 +1,5173 @@
+{
+ "arm-circles": {
+  "name": "Arm circles",
+  "category": "warm-up",
+  "view": "Front view",
+  "default_dose": "10 forward, 10 backward",
+  "cues": [
+   "Arms straight out at shoulder height.",
+   "Start with small circles, let them grow.",
+   "Reverse direction halfway."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Arms out",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -80,
+      -80
+     ],
+     "b": [
+      80,
+      80
+     ],
+     "l": [
+      -9,
+      -9
+     ],
+     "m": [
+      9,
+      9
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "al": 1
+    }
+   ],
+   [
+    "Circle",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -100,
+      -100
+     ],
+     "b": [
+      100,
+      100
+     ],
+     "l": [
+      -9,
+      -9
+     ],
+     "m": [
+      9,
+      9
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "al": 1
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "leg-swings": {
+  "name": "Leg swings",
+  "category": "warm-up",
+  "view": "Side view",
+  "default_dose": "10 per leg",
+  "cues": [
+   "Hold a wall for balance.",
+   "Swing forward and back, loose and controlled.",
+   "Stay tall. Don't let your back round."
+  ],
+  "props": {
+   "wall": 170
+  },
+  "frames": [
+   [
+    "Swing forward",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      110,
+      100
+     ],
+     "b": [
+      0,
+      0
+     ],
+     "l": [
+      60,
+      45
+     ],
+     "m": [
+      0,
+      0
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 135,
+     "fb": 90
+    }
+   ],
+   [
+    "Swing back",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      110,
+      100
+     ],
+     "b": [
+      0,
+      0
+     ],
+     "l": [
+      -40,
+      -30
+     ],
+     "m": [
+      0,
+      0
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 60,
+     "fb": 90
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "hip-circles": {
+  "name": "Hip circles",
+  "category": "warm-up",
+  "view": "Front view",
+  "default_dose": "10 each direction",
+  "cues": [
+   "Hands on hips, feet shoulder-width apart.",
+   "Draw big, slow circles with your hips.",
+   "Keep your head and shoulders quiet."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Center",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -35,
+      28
+     ],
+     "b": [
+      35,
+      -28
+     ],
+     "l": [
+      -9,
+      -9
+     ],
+     "m": [
+      9,
+      9
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "al": 1
+    }
+   ],
+   [
+    "Hips left",
+    {
+     "h": [
+      110,
+      104
+     ],
+     "t": 176,
+     "a": [
+      -35,
+      28
+     ],
+     "b": [
+      35,
+      -28
+     ],
+     "l": [
+      -1.5,
+      -1.5
+     ],
+     "m": [
+      16,
+      16
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "al": 1
+    }
+   ],
+   [
+    "Center",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -35,
+      28
+     ],
+     "b": [
+      35,
+      -28
+     ],
+     "l": [
+      -9,
+      -9
+     ],
+     "m": [
+      9,
+      9
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "al": 1
+    }
+   ],
+   [
+    "Hips right",
+    {
+     "h": [
+      130,
+      104
+     ],
+     "t": 184,
+     "a": [
+      -35,
+      28
+     ],
+     "b": [
+      35,
+      -28
+     ],
+     "l": [
+      -16,
+      -16
+     ],
+     "m": [
+      1.5,
+      1.5
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "al": 1
+    }
+   ]
+  ],
+  "print_frames": [
+   1,
+   3
+  ]
+ },
+ "worlds-greatest-stretch": {
+  "name": "World's greatest stretch",
+  "category": "warm-up",
+  "view": "Side view",
+  "default_dose": "3 per side",
+  "cues": [
+   "Step into a deep lunge, back knee off the floor.",
+   "Drop your inside elbow toward your front instep.",
+   "Rotate and reach that hand to the ceiling. Eyes follow the hand."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Elbow to instep",
+    {
+     "h": [
+      100,
+      139
+     ],
+     "t": 115,
+     "a": [
+      10,
+      10
+     ],
+     "b": [
+      -5,
+      0
+     ],
+     "l": [
+      85,
+      0
+     ],
+     "m": [
+      -60,
+      -70
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 90,
+     "fb": 20
+    }
+   ],
+   [
+    "Rotate and reach",
+    {
+     "h": [
+      100,
+      139
+     ],
+     "t": 115,
+     "a": [
+      180,
+      180
+     ],
+     "b": [
+      -5,
+      0
+     ],
+     "l": [
+      85,
+      0
+     ],
+     "m": [
+      -60,
+      -70
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 90,
+     "fb": 20
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "bodyweight-squat": {
+  "name": "Bodyweight squat",
+  "category": "warm-up",
+  "view": "Side view",
+  "default_dose": "10 reps",
+  "cues": [
+   "Feet shoulder-width, toes slightly out.",
+   "Sit back and down, chest up, arms forward.",
+   "Knees track over toes. Drive up through the whole foot."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Stand tall",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      7,
+      3
+     ],
+     "b": [
+      -7,
+      -3
+     ],
+     "l": [
+      3,
+      -1
+     ],
+     "m": [
+      -3,
+      1
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 89,
+     "fb": 91
+    }
+   ],
+   [
+    "Bottom",
+    {
+     "h": [
+      100,
+      140
+     ],
+     "t": 145,
+     "a": [
+      90,
+      90
+     ],
+     "b": [
+      90,
+      90
+     ],
+     "l": [
+      80,
+      -27
+     ],
+     "m": [
+      80,
+      -27
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 63,
+     "fb": 63
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "band-pull-apart": {
+  "name": "Band pull-apart",
+  "category": "warm-up",
+  "view": "Front view",
+  "default_dose": "15 reps",
+  "cues": [
+   "Hold the band at chest height, arms straight in front.",
+   "Pull it apart until it touches your chest.",
+   "Squeeze your shoulder blades. Control the return."
+  ],
+  "props": {
+   "band": true
+  },
+  "frames": [
+   [
+    "Arms in front",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -95,
+      -95
+     ],
+     "b": [
+      95,
+      95
+     ],
+     "l": [
+      -9,
+      -9
+     ],
+     "m": [
+      9,
+      9
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "al": 0.3
+    }
+   ],
+   [
+    "Pull apart",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -90,
+      -90
+     ],
+     "b": [
+      90,
+      90
+     ],
+     "l": [
+      -9,
+      -9
+     ],
+     "m": [
+      9,
+      9
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "al": 1
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "rower-stroke": {
+  "name": "Rower stroke",
+  "category": "cardio",
+  "view": "Side view",
+  "default_dose": "Zone 2: 20\u201325 min, conversational pace",
+  "cues": [
+   "Catch: shins vertical, arms long, lean slightly forward.",
+   "Drive: legs first, then lean back, then pull to your lower ribs.",
+   "Recovery: arms, body, then legs. The reverse order.",
+   "Damper 3\u20135."
+  ],
+  "props": {
+   "rower": true
+  },
+  "frames": [
+   [
+    "Catch",
+    {
+     "h": [
+      135,
+      150
+     ],
+     "t": 150,
+     "a": [
+      95,
+      95
+     ],
+     "b": [
+      95,
+      95
+     ],
+     "l": [
+      147.4,
+      32.6
+     ],
+     "m": [
+      147.4,
+      32.6
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 122.6,
+     "fb": 122.6
+    }
+   ],
+   [
+    "Legs drive",
+    {
+     "h": [
+      100,
+      150
+     ],
+     "t": 175,
+     "a": [
+      90,
+      90
+     ],
+     "b": [
+      90,
+      90
+     ],
+     "l": [
+      90,
+      90
+     ],
+     "m": [
+      90,
+      90
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 180,
+     "fb": 180
+    }
+   ],
+   [
+    "Finish",
+    {
+     "h": [
+      100,
+      150
+     ],
+     "t": 200,
+     "a": [
+      -40,
+      100
+     ],
+     "b": [
+      -40,
+      100
+     ],
+     "l": [
+      90,
+      90
+     ],
+     "m": [
+      90,
+      90
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 180,
+     "fb": 180
+    }
+   ],
+   [
+    "Arms away",
+    {
+     "h": [
+      100,
+      150
+     ],
+     "t": 175,
+     "a": [
+      90,
+      90
+     ],
+     "b": [
+      90,
+      90
+     ],
+     "l": [
+      90,
+      90
+     ],
+     "m": [
+      90,
+      90
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 180,
+     "fb": 180
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1,
+   2
+  ]
+ },
+ "jab": {
+  "name": "Jab",
+  "category": "boxing",
+  "view": "Side view",
+  "default_dose": "Jab only",
+  "cues": [
+   "From guard, extend the lead hand straight out.",
+   "Turn the fist over at the end of the punch.",
+   "Snap it straight back to your face. Rear hand stays on your chin."
+  ],
+  "props": {
+   "gloves": true
+  },
+  "frames": [
+   [
+    "Guard",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "Jab",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      95,
+      92
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "cross": {
+  "name": "Cross",
+  "category": "boxing",
+  "view": "Side view",
+  "default_dose": "Cross only",
+  "cues": [
+   "Rear hand fires straight down the middle.",
+   "Turn the rear hip and pivot on the ball of the rear foot.",
+   "Snap back to guard. Lead hand stays up."
+  ],
+  "props": {
+   "gloves": true
+  },
+  "frames": [
+   [
+    "Guard",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "Cross",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 162,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      95,
+      92
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 55,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "one-two": {
+  "name": "The 1-2",
+  "category": "boxing",
+  "view": "Side view",
+  "default_dose": "Easy 1-2s",
+  "cues": [
+   "Jab, bring it back, then cross.",
+   "Breathe out sharply on each punch.",
+   "Step in with the jab. Step out after the cross."
+  ],
+  "props": {
+   "gloves": true
+  },
+  "frames": [
+   [
+    "Guard",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "1: Jab",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      95,
+      92
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "Back to guard",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "2: Cross",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 162,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      95,
+      92
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 55,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1,
+   3
+  ]
+ },
+ "dead-bug": {
+  "name": "Dead bug",
+  "category": "core",
+  "view": "Side view",
+  "default_dose": "2 \u00d7 10 per side",
+  "cues": [
+   "Lie on your back, arms up, knees over hips.",
+   "Press your low back into the floor. Keep it there.",
+   "Slowly extend the opposite arm and leg, return, switch sides."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Start",
+    {
+     "h": [
+      120,
+      168
+     ],
+     "t": -90,
+     "a": [
+      180,
+      180
+     ],
+     "b": [
+      180,
+      180
+     ],
+     "l": [
+      180,
+      90
+     ],
+     "m": [
+      180,
+      90
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 180,
+     "fb": 180
+    }
+   ],
+   [
+    "Opposite arm and leg",
+    {
+     "h": [
+      120,
+      168
+     ],
+     "t": -90,
+     "a": [
+      260,
+      260
+     ],
+     "b": [
+      180,
+      180
+     ],
+     "l": [
+      180,
+      90
+     ],
+     "m": [
+      100,
+      95
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 180,
+     "fb": 185
+    }
+   ],
+   [
+    "Start",
+    {
+     "h": [
+      120,
+      168
+     ],
+     "t": -90,
+     "a": [
+      180,
+      180
+     ],
+     "b": [
+      180,
+      180
+     ],
+     "l": [
+      180,
+      90
+     ],
+     "m": [
+      180,
+      90
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 180,
+     "fb": 180
+    }
+   ],
+   [
+    "Switch sides",
+    {
+     "h": [
+      120,
+      168
+     ],
+     "t": -90,
+     "a": [
+      180,
+      180
+     ],
+     "b": [
+      260,
+      260
+     ],
+     "l": [
+      100,
+      95
+     ],
+     "m": [
+      180,
+      90
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 185,
+     "fb": 180
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1,
+   3
+  ]
+ },
+ "glute-bridge": {
+  "name": "Glute bridge",
+  "category": "core",
+  "view": "Side view",
+  "default_dose": "2 \u00d7 15",
+  "cues": [
+   "Feet flat, knees bent, arms at your sides.",
+   "Drive through your heels and lift your hips.",
+   "Shoulders, hips, and knees in one line. Squeeze, then lower slowly."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Start",
+    {
+     "h": [
+      100,
+      168
+     ],
+     "t": -90,
+     "a": [
+      90,
+      90
+     ],
+     "b": [
+      90,
+      90
+     ],
+     "l": [
+      130.7,
+      30.3
+     ],
+     "m": [
+      130.7,
+      30.3
+     ],
+     "fa": 90,
+     "fb": 90,
+     "al": 1,
+     "fl": 12
+    }
+   ],
+   [
+    "Top",
+    {
+     "h": [
+      106,
+      140
+     ],
+     "t": -55.6,
+     "a": [
+      90,
+      90
+     ],
+     "b": [
+      90,
+      90
+     ],
+     "l": [
+      92.7,
+      6
+     ],
+     "m": [
+      92.7,
+      6
+     ],
+     "fa": 90,
+     "fb": 90,
+     "al": 1,
+     "fl": 12
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "side-plank": {
+  "name": "Side plank",
+  "category": "core",
+  "view": "Front view",
+  "default_dose": "2 \u00d7 20 sec per side",
+  "cues": [
+   "Elbow directly under your shoulder, feet stacked.",
+   "Lift your hips until your body is one straight line.",
+   "Hold. Don't let your hips sag."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Set up",
+    {
+     "h": [
+      108.7,
+      172.2
+     ],
+     "t": 116,
+     "a": [
+      0,
+      90
+     ],
+     "b": [
+      180,
+      180
+     ],
+     "l": [
+      -85.7,
+      -85.7
+     ],
+     "m": [
+      -85.7,
+      -85.7
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 4.299999999999997,
+     "fb": 4.299999999999997
+    }
+   ],
+   [
+    "Lift and hold",
+    {
+     "h": [
+      105.1,
+      161.8
+     ],
+     "t": 102.3,
+     "a": [
+      0,
+      90
+     ],
+     "b": [
+      180,
+      180
+     ],
+     "l": [
+      -77.7,
+      -77.7
+     ],
+     "m": [
+      -77.7,
+      -77.7
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 12.299999999999997,
+     "fb": 12.299999999999997
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "hip-flexor-stretch": {
+  "name": "Hip flexor stretch",
+  "category": "mobility",
+  "view": "Side view",
+  "default_dose": "30\u201345 sec per side",
+  "cues": [
+   "Half-kneeling, front knee over the ankle.",
+   "Squeeze the glute of the down leg and shift your hips forward.",
+   "Reach the same-side arm up for more stretch."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Set up",
+    {
+     "h": [
+      112,
+      140
+     ],
+     "t": 180,
+     "a": [
+      0,
+      0
+     ],
+     "b": [
+      0,
+      0
+     ],
+     "l": [
+      90,
+      0
+     ],
+     "m": [
+      -18.4,
+      -90
+     ],
+     "fb": -80,
+     "al": 1,
+     "fl": 12,
+     "fa": 90
+    }
+   ],
+   [
+    "Hips forward, reach",
+    {
+     "h": [
+      118,
+      142
+     ],
+     "t": 180,
+     "a": [
+      180,
+      180
+     ],
+     "b": [
+      0,
+      0
+     ],
+     "l": [
+      90,
+      -9.5
+     ],
+     "m": [
+      -27.9,
+      -90
+     ],
+     "fb": -80,
+     "al": 1,
+     "fl": 12,
+     "fa": 80.5
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "hamstring-stretch": {
+  "name": "Standing hamstring stretch",
+  "category": "mobility",
+  "view": "Side view",
+  "default_dose": "30\u201345 sec per side",
+  "cues": [
+   "Front heel down, toes up, leg straight.",
+   "Hinge at the hips with a flat back.",
+   "Stop when you feel it behind the thigh. No bouncing."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Stand tall",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      7,
+      3
+     ],
+     "b": [
+      -7,
+      -3
+     ],
+     "l": [
+      3,
+      -1
+     ],
+     "m": [
+      -3,
+      1
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 89,
+     "fb": 91
+    }
+   ],
+   [
+    "Hinge",
+    {
+     "h": [
+      105,
+      104
+     ],
+     "t": 120,
+     "a": [
+      -10,
+      -10
+     ],
+     "b": [
+      -10,
+      -10
+     ],
+     "l": [
+      20,
+      20
+     ],
+     "m": [
+      -3,
+      -3
+     ],
+     "fa": 160,
+     "al": 1,
+     "fl": 12,
+     "fb": 87
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "open-book": {
+  "name": "Open book",
+  "category": "mobility",
+  "view": "Top view (lying on your side)",
+  "default_dose": "6 slow reps per side",
+  "cues": [
+   "Lie on your side, knees bent at 90\u00b0, arms together in front.",
+   "Sweep the top arm open to the other side. Eyes follow the hand.",
+   "Keep your knees stacked on the floor."
+  ],
+  "props": {
+   "top": true
+  },
+  "frames": [
+   [
+    "Arms together",
+    {
+     "h": [
+      70,
+      120
+     ],
+     "t": 90,
+     "a": [
+      180,
+      180
+     ],
+     "b": [
+      180,
+      180
+     ],
+     "l": [
+      180,
+      -90
+     ],
+     "m": [
+      180,
+      -90
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 0,
+     "fb": 0
+    }
+   ],
+   [
+    "Open",
+    {
+     "h": [
+      70,
+      120
+     ],
+     "t": 90,
+     "a": [
+      0,
+      0
+     ],
+     "b": [
+      180,
+      180
+     ],
+     "l": [
+      180,
+      -90
+     ],
+     "m": [
+      180,
+      -90
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 0,
+     "fb": 0
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "cross-body-shoulder": {
+  "name": "Cross-body shoulder stretch",
+  "category": "mobility",
+  "view": "Front view",
+  "default_dose": "30\u201345 sec per side",
+  "cues": [
+   "Bring one arm straight across your chest.",
+   "Use the other forearm to pull it in gently.",
+   "Keep the stretching shoulder down, away from your ear."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Stand tall",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -12,
+      -5
+     ],
+     "b": [
+      12,
+      5
+     ],
+     "l": [
+      -9,
+      -9
+     ],
+     "m": [
+      9,
+      9
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "al": 1
+    }
+   ],
+   [
+    "Pull across",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      95,
+      95
+     ],
+     "b": [
+      30,
+      160
+     ],
+     "l": [
+      -9,
+      -9
+     ],
+     "m": [
+      9,
+      9
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "al": 1
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "wrist-stretch": {
+  "name": "Wrist stretch",
+  "category": "mobility",
+  "view": "Side view",
+  "default_dose": "30 sec each way, each hand",
+  "cues": [
+   "Arm straight out in front, palm up.",
+   "Gently pull the fingers back with the other hand.",
+   "Then flip palm down and pull the back of the hand."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Stand tall",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      7,
+      3
+     ],
+     "b": [
+      -7,
+      -3
+     ],
+     "l": [
+      3,
+      -1
+     ],
+     "m": [
+      -3,
+      1
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 89,
+     "fb": 91
+    }
+   ],
+   [
+    "Pull fingers back",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      90,
+      90
+     ],
+     "b": [
+      60,
+      113
+     ],
+     "l": [
+      3,
+      -1
+     ],
+     "m": [
+      -3,
+      1
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 89,
+     "fb": 91
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "calf-stretch": {
+  "name": "Calf stretch",
+  "category": "mobility",
+  "view": "Side view",
+  "default_dose": "30\u201345 sec per side",
+  "cues": [
+   "Hands on the wall, back leg straight.",
+   "Press the back heel into the floor.",
+   "Lean in until you feel it in the calf."
+  ],
+  "props": {
+   "wall": 188
+  },
+  "frames": [
+   [
+    "Hands on wall",
+    {
+     "h": [
+      112,
+      106
+     ],
+     "t": 145,
+     "a": [
+      100,
+      100
+     ],
+     "b": [
+      100,
+      100
+     ],
+     "l": [
+      25,
+      -5
+     ],
+     "m": [
+      -22,
+      -22
+     ],
+     "fb": 60,
+     "al": 1,
+     "fl": 12,
+     "fa": 85
+    }
+   ],
+   [
+    "Heel down, lean in",
+    {
+     "h": [
+      112,
+      106
+     ],
+     "t": 135,
+     "a": [
+      120,
+      120
+     ],
+     "b": [
+      120,
+      120
+     ],
+     "l": [
+      25,
+      -5
+     ],
+     "m": [
+      -22,
+      -22
+     ],
+     "fb": 90,
+     "al": 1,
+     "fl": 12,
+     "fa": 85
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "stance-bounce": {
+  "name": "Stance bounce",
+  "category": "warm-up",
+  "view": "Side view",
+  "default_dose": "90 sec",
+  "cues": [
+   "Stay in your stance, hands up.",
+   "Small, light bounces on the balls of your feet.",
+   "Shift forward, back, and side to side without losing the stance shape."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Down",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "Up",
+    {
+     "h": [
+      110,
+      101
+     ],
+     "t": 172,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      9.7,
+      9.1
+     ],
+     "m": [
+      -13.8,
+      -14.3
+     ],
+     "fa": 60,
+     "fb": 55
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "one-one-two": {
+  "name": "The 1-1-2",
+  "category": "boxing",
+  "view": "Side view",
+  "default_dose": "As programmed",
+  "cues": [
+   "Double jab: the second jab comes from the same spot, don't pull all the way back.",
+   "Then the cross straight down the middle.",
+   "Back to guard every time."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Guard",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "1: Jab",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      95,
+      92
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "Halfway back",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      70,
+      120
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "1: Jab again",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      95,
+      92
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "Guard",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "2: Cross",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 162,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      95,
+      92
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 55,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1,
+   5
+  ]
+ },
+ "lead-hook": {
+  "name": "Lead hook",
+  "category": "boxing",
+  "view": "Front view",
+  "default_dose": "As programmed",
+  "cues": [
+   "Elbow up to shoulder height, arm bent about 90 degrees.",
+   "Turn the lead hip and pivot on the ball of the lead foot. The punch comes from the turn.",
+   "Keep it short. Rear hand stays on your chin."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Guard",
+    {
+     "h": [
+      120,
+      106
+     ],
+     "t": 180,
+     "a": [
+      -83.7,
+      128.3
+     ],
+     "b": [
+      83.7,
+      -128.3
+     ],
+     "l": [
+      -15.4,
+      -10.4
+     ],
+     "m": [
+      15.4,
+      10.4
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Hook",
+    {
+     "h": [
+      118,
+      106
+     ],
+     "t": 184,
+     "a": [
+      -90,
+      95
+     ],
+     "b": [
+      71.0,
+      -148.9
+     ],
+     "l": [
+      -18.0,
+      -4.9
+     ],
+     "m": [
+      14.7,
+      14.1
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "one-two-three": {
+  "name": "The 1-2-3",
+  "category": "boxing",
+  "view": "Side view",
+  "default_dose": "As programmed",
+  "cues": [
+   "Jab, cross, lead hook.",
+   "The cross turns you one way, the hook turns you back.",
+   "Hands back to guard after the hook. Don't admire your work."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Guard",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "1: Jab",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      95,
+      92
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "Guard",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "2: Cross",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 162,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      95,
+      92
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 55,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "3: Hook",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 176,
+     "a": [
+      92,
+      92
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 70,
+     "sa": 0.55
+    }
+   ]
+  ],
+  "print_frames": [
+   1,
+   3,
+   4
+  ]
+ },
+ "one-two-three-two": {
+  "name": "The 1-2-3-2",
+  "category": "boxing",
+  "view": "Side view",
+  "default_dose": "As programmed",
+  "cues": [
+   "Jab, cross, lead hook, cross.",
+   "Stay balanced over your feet through all four punches.",
+   "Breathe out on every punch. Finish in guard."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Guard",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "1: Jab",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 172,
+     "a": [
+      95,
+      92
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "2: Cross",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 162,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      95,
+      92
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 55,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ],
+   [
+    "3: Hook",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 176,
+     "a": [
+      92,
+      92
+     ],
+     "b": [
+      20,
+      175
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 65,
+     "al": 1,
+     "fl": 12,
+     "fa": 70,
+     "sa": 0.55
+    }
+   ],
+   [
+    "4: Cross",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 162,
+     "a": [
+      40,
+      165
+     ],
+     "b": [
+      95,
+      92
+     ],
+     "l": [
+      15,
+      5
+     ],
+     "m": [
+      -20,
+      -10
+     ],
+     "fb": 55,
+     "al": 1,
+     "fl": 12,
+     "fa": 95
+    }
+   ]
+  ],
+  "print_frames": [
+   1,
+   3,
+   4
+  ]
+ },
+ "slip": {
+  "name": "Slip",
+  "category": "boxing",
+  "view": "Front view",
+  "default_dose": "As programmed",
+  "cues": [
+   "Bend slightly at the knees and turn the shoulders to move your head off the center line.",
+   "Move just enough for the punch to miss. A few inches.",
+   "Eyes stay on the target. Come back to guard ready to punch."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Guard",
+    {
+     "h": [
+      120,
+      106
+     ],
+     "t": 180,
+     "a": [
+      -83.7,
+      128.3
+     ],
+     "b": [
+      83.7,
+      -128.3
+     ],
+     "l": [
+      -15.4,
+      -10.4
+     ],
+     "m": [
+      15.4,
+      10.4
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Slip right",
+    {
+     "h": [
+      124,
+      110
+     ],
+     "t": 170,
+     "a": [
+      -83.7,
+      128.3
+     ],
+     "b": [
+      83.7,
+      -128.3
+     ],
+     "l": [
+      -15.4,
+      -10.4
+     ],
+     "m": [
+      15.4,
+      10.4
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Guard",
+    {
+     "h": [
+      120,
+      106
+     ],
+     "t": 180,
+     "a": [
+      -83.7,
+      128.3
+     ],
+     "b": [
+      83.7,
+      -128.3
+     ],
+     "l": [
+      -15.4,
+      -10.4
+     ],
+     "m": [
+      15.4,
+      10.4
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Slip left",
+    {
+     "h": [
+      116,
+      110
+     ],
+     "t": 190,
+     "a": [
+      -83.7,
+      128.3
+     ],
+     "b": [
+      83.7,
+      -128.3
+     ],
+     "l": [
+      -15.4,
+      -10.4
+     ],
+     "m": [
+      15.4,
+      10.4
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1,
+   3
+  ]
+ },
+ "speed-bag": {
+  "name": "Speed bag",
+  "category": "boxing",
+  "view": "Side view",
+  "default_dose": "As programmed",
+  "cues": [
+   "Fists at eye level, close to the bag.",
+   "Small circles with your fists, hitting in rhythm: rebound, rebound, hit.",
+   "Light touches. Rhythm over power."
+  ],
+  "props": {
+   "speedbag": [
+    158,
+    40
+   ]
+  },
+  "frames": [
+   [
+    "Near fist",
+    {
+     "h": [
+      118,
+      104
+     ],
+     "t": 176,
+     "a": [
+      58.1,
+      173.5
+     ],
+     "b": [
+      28.0,
+      164.0
+     ],
+     "l": [
+      4.8,
+      4.2
+     ],
+     "m": [
+      -2.7,
+      -3.3
+     ]
+    }
+   ],
+   [
+    "Far fist",
+    {
+     "h": [
+      118,
+      104
+     ],
+     "t": 176,
+     "a": [
+      28.0,
+      164.0
+     ],
+     "b": [
+      58.1,
+      173.5
+     ],
+     "l": [
+      4.8,
+      4.2
+     ],
+     "m": [
+      -2.7,
+      -3.3
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "jump-rope": {
+  "name": "Jump rope",
+  "category": "warm-up",
+  "view": "Front view",
+  "default_dose": "2-3 min (Saturdays)",
+  "cues": [
+   "Elbows close to your sides. Turn the rope with your wrists.",
+   "Small hops on the balls of your feet, just high enough to clear the rope.",
+   "Trip? Reset and keep going. Everybody trips."
+  ],
+  "props": {
+   "rope": true
+  },
+  "frames": [
+   [
+    "Rope overhead",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -45.4,
+      -8.4
+     ],
+     "b": [
+      45.4,
+      8.4
+     ],
+     "l": [
+      -6.3,
+      -5.7
+     ],
+     "m": [
+      6.3,
+      5.7
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "r": 8
+    }
+   ],
+   [
+    "Hop, rope under",
+    {
+     "h": [
+      120,
+      98
+     ],
+     "t": 180,
+     "a": [
+      -45.4,
+      -8.4
+     ],
+     "b": [
+      45.4,
+      8.4
+     ],
+     "l": [
+      -6.3,
+      -5.7
+     ],
+     "m": [
+      6.3,
+      5.7
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "r": 186
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "push-up": {
+  "name": "Push-up",
+  "category": "strength",
+  "view": "Side view",
+  "default_dose": "8-10 reps",
+  "cues": [
+   "Hands just outside shoulder-width, body in one straight line.",
+   "Lower your chest toward the floor, elbows at about 45 degrees from your body.",
+   "Push the floor away. Hips rise with your chest.",
+   "Beginner: hands on a bench. Advanced: clap or deficit."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Top",
+    {
+     "h": [
+      106.8,
+      145.8
+     ],
+     "t": 110.1,
+     "a": [
+      1.9,
+      2.7
+     ],
+     "b": [
+      -0.3,
+      0.4
+     ],
+     "l": [
+      -69.9,
+      -69.9
+     ],
+     "m": [
+      -69.9,
+      -69.9
+     ],
+     "fa": 10,
+     "fb": 10,
+     "fl": 9
+    }
+   ],
+   [
+    "Bottom",
+    {
+     "h": [
+      110.1,
+      168.2
+     ],
+     "t": 92.8,
+     "a": [
+      -81.7,
+      64.6
+     ],
+     "b": [
+      -88.5,
+      56.2
+     ],
+     "l": [
+      -87.1643738636517,
+      -87.1643738636517
+     ],
+     "m": [
+      -87.1643738636517,
+      -87.1643738636517
+     ],
+     "fa": 10,
+     "fb": 10,
+     "fl": 9
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "mountain-climber": {
+  "name": "Mountain climbers",
+  "category": "conditioning",
+  "view": "Side view",
+  "default_dose": "20 reps",
+  "cues": [
+   "Start in a high plank, hands under shoulders.",
+   "Drive one knee toward your chest, then switch fast.",
+   "Keep your hips level. Don't bounce your butt up."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Right knee in",
+    {
+     "h": [
+      106.8,
+      145.8
+     ],
+     "t": 110.1,
+     "a": [
+      1.9,
+      2.7
+     ],
+     "b": [
+      -0.3,
+      0.4
+     ],
+     "l": [
+      102.7,
+      -24.7
+     ],
+     "m": [
+      -69.9,
+      -69.9
+     ],
+     "fa": 30,
+     "fb": 10,
+     "fl": 9
+    }
+   ],
+   [
+    "Left knee in",
+    {
+     "h": [
+      106.8,
+      145.8
+     ],
+     "t": 110.1,
+     "a": [
+      1.9,
+      2.7
+     ],
+     "b": [
+      -0.3,
+      0.4
+     ],
+     "l": [
+      -69.9,
+      -69.9
+     ],
+     "m": [
+      102.7,
+      -24.7
+     ],
+     "fa": 10,
+     "fb": 30,
+     "fl": 9
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "plank": {
+  "name": "Plank",
+  "category": "core",
+  "view": "Side view",
+  "default_dose": "3 x 30 sec",
+  "cues": [
+   "Forearms on the floor, elbows under shoulders.",
+   "Squeeze your glutes and brace your stomach like you're about to take a punch.",
+   "One straight line from head to heels. Don't let the hips sag."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Wrong: hips sagging",
+    {
+     "h": [
+      106.6,
+      167.5
+     ],
+     "t": 109.7,
+     "a": [
+      0,
+      90
+     ],
+     "b": [
+      0,
+      90
+     ],
+     "l": [
+      -86.6,
+      -87.2
+     ],
+     "m": [
+      -86.6,
+      -87.2
+     ],
+     "fa": 10,
+     "fb": 10,
+     "fl": 9
+    }
+   ],
+   [
+    "Right: straight line",
+    {
+     "h": [
+      104.6,
+      159.4
+     ],
+     "t": 99.3,
+     "a": [
+      0,
+      90
+     ],
+     "b": [
+      0,
+      90
+     ],
+     "l": [
+      -80.7,
+      -80.7
+     ],
+     "m": [
+      -80.7,
+      -80.7
+     ],
+     "fa": 10,
+     "fb": 10,
+     "fl": 9
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "pallof-press": {
+  "name": "Cable Pallof press",
+  "category": "core",
+  "view": "Front view (cable comes from the side)",
+  "default_dose": "3 x 10 per side",
+  "cues": [
+   "Stand side-on to the cable, handle at the middle of your chest.",
+   "Press straight out in front of you and hold for a second.",
+   "Don't let the cable twist you. That resistance is the exercise."
+  ],
+  "props": {
+   "cable": [
+    18,
+    72
+   ]
+  },
+  "frames": [
+   [
+    "Handle at chest",
+    {
+     "h": [
+      120,
+      108
+     ],
+     "t": 180,
+     "a": [
+      -89.1,
+      66.4
+     ],
+     "b": [
+      89.1,
+      -66.4
+     ],
+     "l": [
+      -26.5,
+      1.4
+     ],
+     "m": [
+      26.5,
+      -1.4
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Press out",
+    {
+     "h": [
+      120,
+      108
+     ],
+     "t": 180,
+     "a": [
+      -75.7,
+      39.3
+     ],
+     "b": [
+      75.7,
+      -39.3
+     ],
+     "l": [
+      -26.5,
+      1.4
+     ],
+     "m": [
+      26.5,
+      -1.4
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90,
+     "al": 0.4
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "hanging-knee-raise": {
+  "name": "Hanging knee raise",
+  "category": "core",
+  "view": "Side view",
+  "default_dose": "3 x 8",
+  "cues": [
+   "Hang from the bar with straight arms, shoulders pulled down.",
+   "Raise your knees to hip height without swinging.",
+   "Lower slowly. Beginner: lying leg raises instead."
+  ],
+  "props": {
+   "pullbar": [
+    122,
+    6
+   ],
+   "nofloor": true
+  },
+  "frames": [
+   [
+    "Hang",
+    {
+     "h": [
+      122,
+      104
+     ],
+     "t": 180,
+     "a": [
+      180,
+      180
+     ],
+     "b": [
+      180,
+      180
+     ],
+     "l": [
+      7.7,
+      -17.0
+     ],
+     "m": [
+      5.5,
+      -17.8
+     ]
+    }
+   ],
+   [
+    "Knees up",
+    {
+     "h": [
+      122,
+      104
+     ],
+     "t": 180,
+     "a": [
+      180,
+      180
+     ],
+     "b": [
+      180,
+      180
+     ],
+     "l": [
+      95,
+      0
+     ],
+     "m": [
+      92,
+      0
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "bear-crawl": {
+  "name": "Bear crawl",
+  "category": "core",
+  "view": "Side view",
+  "default_dose": "3 x 15-20 m",
+  "cues": [
+   "Hands under shoulders, knees under hips, knees an inch off the floor.",
+   "Move opposite hand and foot together, small steps.",
+   "Back flat and hips low the whole way."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Right hand, left foot",
+    {
+     "h": [
+      104,
+      131
+     ],
+     "t": 92,
+     "a": [
+      13.7,
+      13.0
+     ],
+     "b": [
+      -4.8,
+      -4.1
+     ],
+     "l": [
+      -0.0,
+      -91.5
+     ],
+     "m": [
+      21.6,
+      -87.5
+     ],
+     "fa": -20,
+     "fb": -20
+    }
+   ],
+   [
+    "Left hand, right foot",
+    {
+     "h": [
+      104,
+      131
+     ],
+     "t": 92,
+     "a": [
+      -4.8,
+      -4.1
+     ],
+     "b": [
+      13.7,
+      13.0
+     ],
+     "l": [
+      21.6,
+      -87.5
+     ],
+     "m": [
+      -0.0,
+      -91.5
+     ],
+     "fa": -20,
+     "fb": -20
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "med-ball-rotational-throw": {
+  "name": "Med ball rotational throw",
+  "category": "power",
+  "view": "Front view",
+  "default_dose": "3 x 5 per side",
+  "cues": [
+   "Stand side-on to the wall, feet wider than shoulders.",
+   "Load the ball at your back hip, then turn hips first, arms last.",
+   "Throw hard into the wall and catch it on the rebound."
+  ],
+  "props": {
+   "wall": 190,
+   "hold": {
+    "type": "mb",
+    "at": "mid"
+   }
+  },
+  "frames": [
+   [
+    "Load",
+    {
+     "h": [
+      112,
+      110
+     ],
+     "t": 186,
+     "a": [
+      -24.0,
+      -1.5
+     ],
+     "b": [
+      -26.5,
+      20.5
+     ],
+     "l": [
+      -31.4,
+      8.8
+     ],
+     "m": [
+      23.5,
+      22.9
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Throw",
+    {
+     "h": [
+      126,
+      108
+     ],
+     "t": 176,
+     "a": [
+      104.5,
+      64.3
+     ],
+     "b": [
+      61.3,
+      91.5
+     ],
+     "l": [
+      -21.5,
+      -21.0
+     ],
+     "m": [
+      26.5,
+      -1.4
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "box-jump": {
+  "name": "Box jump",
+  "category": "power",
+  "view": "Side view",
+  "default_dose": "3 x 5",
+  "cues": [
+   "Quarter squat and swing your arms back.",
+   "Explode up, swing the arms, land soft on the box with bent knees.",
+   "Stand up tall, then STEP down. Don't jump down.",
+   "Beginner: squat jump onto a low box or no box."
+  ],
+  "props": {
+   "box": [
+    150,
+    50,
+    40
+   ]
+  },
+  "frames": [
+   [
+    "Load",
+    {
+     "h": [
+      100,
+      128
+     ],
+     "t": 140,
+     "a": [
+      -40,
+      -30
+     ],
+     "b": [
+      -40,
+      -30
+     ],
+     "l": [
+      54.9,
+      -37.4
+     ],
+     "m": [
+      51.1,
+      -42.3
+     ]
+    }
+   ],
+   [
+    "Jump",
+    {
+     "h": [
+      140,
+      86
+     ],
+     "t": 170,
+     "a": [
+      150,
+      150
+     ],
+     "b": [
+      150,
+      150
+     ],
+     "l": [
+      74.6,
+      -32.9
+     ],
+     "m": [
+      73.4,
+      -40.0
+     ],
+     "fa": 150,
+     "fb": 150
+    }
+   ],
+   [
+    "Land soft",
+    {
+     "h": [
+      158,
+      110
+     ],
+     "t": 150,
+     "a": [
+      90,
+      90
+     ],
+     "b": [
+      90,
+      90
+     ],
+     "l": [
+      93.6,
+      -31.6
+     ],
+     "m": [
+      89.2,
+      -39.2
+     ]
+    }
+   ],
+   [
+    "Step down",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      5,
+      3
+     ],
+     "b": [
+      -5,
+      -3
+     ],
+     "l": [
+      3.3,
+      2.7
+     ],
+     "m": [
+      -1.2,
+      -1.8
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1,
+   2
+  ]
+ },
+ "trap-bar-deadlift": {
+  "name": "Trap bar deadlift",
+  "category": "strength",
+  "view": "Side view",
+  "default_dose": "3 x 8",
+  "cues": [
+   "Stand in the middle of the bar, grip the handles, hips back, chest up.",
+   "Push the floor away. Hips and shoulders rise together.",
+   "Stand tall and squeeze. Lower by pushing the hips back first.",
+   "Beginner: kettlebell deadlift, 3 x 10."
+  ],
+  "props": {
+   "hold": {
+    "type": "plates",
+    "at": "near"
+   }
+  },
+  "frames": [
+   [
+    "Bottom",
+    {
+     "h": [
+      100,
+      140
+     ],
+     "t": 125,
+     "a": [
+      -1.3,
+      1.5
+     ],
+     "b": [
+      -1.6,
+      -2.3
+     ],
+     "l": [
+      86.8,
+      -4.4
+     ],
+     "m": [
+      85.7,
+      -12.0
+     ]
+    }
+   ],
+   [
+    "Lockout",
+    {
+     "h": [
+      126,
+      104
+     ],
+     "t": 180,
+     "a": [
+      0.9,
+      1.4
+     ],
+     "b": [
+      0.3,
+      -0.1
+     ],
+     "l": [
+      5.6,
+      5.0
+     ],
+     "m": [
+      1.8,
+      1.2
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "goblet-squat": {
+  "name": "Goblet squat",
+  "category": "strength",
+  "view": "Side view",
+  "default_dose": "3 x 10",
+  "cues": [
+   "Hold a kettlebell or dumbbell at your chest, elbows down.",
+   "Sit down between your heels, chest tall.",
+   "Elbows inside the knees at the bottom. Drive up through the whole foot."
+  ],
+  "props": {
+   "hold": {
+    "type": "kb",
+    "at": "near"
+   }
+  },
+  "frames": [
+   [
+    "Stand",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -16.5,
+      117.1
+     ],
+     "b": [
+      -22.1,
+      114.9
+     ],
+     "l": [
+      2.6,
+      2.0
+     ],
+     "m": [
+      -2.0,
+      -2.6
+     ]
+    }
+   ],
+   [
+    "Bottom",
+    {
+     "h": [
+      100,
+      140
+     ],
+     "t": 145,
+     "a": [
+      -9.5,
+      131.7
+     ],
+     "b": [
+      -15.1,
+      130.0
+     ],
+     "l": [
+      80,
+      -27
+     ],
+     "m": [
+      80,
+      -27
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "db-row": {
+  "name": "Single-arm dumbbell row",
+  "category": "strength",
+  "view": "Side view",
+  "default_dose": "3 x 10 per side",
+  "cues": [
+   "Free hand on the bench, back flat, dumbbell hanging straight down.",
+   "Pull the dumbbell to your hip, elbow close to your body.",
+   "Lower with control. Don't twist your torso to lift it."
+  ],
+  "props": {
+   "bench": [
+    150,
+    55,
+    40
+   ],
+   "hold": {
+    "type": "db",
+    "at": "near"
+   }
+  },
+  "frames": [
+   [
+    "Arm long",
+    {
+     "h": [
+      110,
+      108
+     ],
+     "t": 98,
+     "a": [
+      0.2,
+      0.9
+     ],
+     "b": [
+      55.0,
+      -11.7
+     ],
+     "l": [
+      26.5,
+      1.6
+     ],
+     "m": [
+      1.4,
+      -26.5
+     ]
+    }
+   ],
+   [
+    "Row to hip",
+    {
+     "h": [
+      110,
+      108
+     ],
+     "t": 98,
+     "a": [
+      -120.2,
+      11.8
+     ],
+     "b": [
+      55.0,
+      -11.7
+     ],
+     "l": [
+      26.5,
+      1.6
+     ],
+     "m": [
+      1.4,
+      -26.5
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "split-squat": {
+  "name": "Dumbbell split squat",
+  "category": "strength",
+  "view": "Side view",
+  "default_dose": "3 x 8 per side",
+  "cues": [
+   "Long split stance, back heel up, dumbbells at your sides.",
+   "Drop the back knee straight down toward the floor.",
+   "Front knee stays over the ankle. Drive up through the front foot."
+  ],
+  "props": {
+   "hold": {
+    "type": "db",
+    "at": "both"
+   }
+  },
+  "frames": [
+   [
+    "Top",
+    {
+     "h": [
+      110,
+      106
+     ],
+     "t": 180,
+     "a": [
+      3,
+      0
+     ],
+     "b": [
+      -3,
+      0
+     ],
+     "l": [
+      22.4,
+      21.8
+     ],
+     "m": [
+      -23.1,
+      -23.6
+     ],
+     "fb": 40
+    }
+   ],
+   [
+    "Bottom",
+    {
+     "h": [
+      108,
+      140
+     ],
+     "t": 180,
+     "a": [
+      3,
+      0
+     ],
+     "b": [
+      -3,
+      0
+     ],
+     "l": [
+      86.3,
+      -9.0
+     ],
+     "m": [
+      6.0,
+      -89.7
+     ],
+     "fb": 40
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "landmine-press": {
+  "name": "Half-kneeling landmine press",
+  "category": "strength",
+  "view": "Side view",
+  "default_dose": "3 x 8 per side",
+  "cues": [
+   "Half-kneeling, bar end at your shoulder, back knee down on the same side as the pressing hand.",
+   "Press up and forward until your arm is straight.",
+   "Squeeze the glute of the down leg. Don't lean back."
+  ],
+  "props": {
+   "landmine": [
+    228,
+    178
+   ]
+  },
+  "frames": [
+   [
+    "Bar at shoulder",
+    {
+     "h": [
+      112,
+      140
+     ],
+     "t": 180,
+     "a": [
+      32.2,
+      179.7
+     ],
+     "b": [
+      0,
+      0
+     ],
+     "l": [
+      90,
+      0
+     ],
+     "m": [
+      -18.4,
+      -90.1
+     ],
+     "fb": -80
+    }
+   ],
+   [
+    "Press",
+    {
+     "h": [
+      112,
+      140
+     ],
+     "t": 178,
+     "a": [
+      128.1,
+      128.8
+     ],
+     "b": [
+      0,
+      0
+     ],
+     "l": [
+      90,
+      0
+     ],
+     "m": [
+      -18.4,
+      -90.1
+     ],
+     "fb": -80
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "kettlebell-swing": {
+  "name": "Kettlebell swing",
+  "category": "conditioning",
+  "view": "Side view",
+  "default_dose": "12 reps (EMOM)",
+  "cues": [
+   "Hike the bell back between your legs, hips back, flat back.",
+   "Snap the hips forward hard. The hips move the bell, not the arms.",
+   "Bell floats to chest height. Stand tall, squeeze the glutes, then hike again."
+  ],
+  "props": {
+   "hold": {
+    "type": "kb",
+    "at": "near"
+   }
+  },
+  "frames": [
+   [
+    "Hike back",
+    {
+     "h": [
+      100,
+      118
+     ],
+     "t": 128,
+     "a": [
+      -21.6,
+      -22.1
+     ],
+     "b": [
+      -23.2,
+      -23.7
+     ],
+     "l": [
+      50.5,
+      -5.0
+     ],
+     "m": [
+      48.9,
+      -13.1
+     ]
+    }
+   ],
+   [
+    "Hips snap, float",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      90,
+      90
+     ],
+     "b": [
+      90,
+      90
+     ],
+     "l": [
+      4.8,
+      4.2
+     ],
+     "m": [
+      0.3,
+      -0.3
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "med-ball-slam": {
+  "name": "Med ball slam",
+  "category": "conditioning",
+  "view": "Side view",
+  "default_dose": "10 reps (EMOM)",
+  "cues": [
+   "Reach the ball overhead, up on your toes.",
+   "Slam it into the floor in front of you as hard as you can.",
+   "Hinge and squat to pick it up. Don't round your back."
+  ],
+  "props": {
+   "hold": {
+    "type": "mb",
+    "at": "mid"
+   }
+  },
+  "frames": [
+   [
+    "Overhead",
+    {
+     "h": [
+      120,
+      102
+     ],
+     "t": 182,
+     "a": [
+      178,
+      178
+     ],
+     "b": [
+      176,
+      176
+     ],
+     "l": [
+      3.3,
+      2.7
+     ],
+     "m": [
+      -1.2,
+      -1.8
+     ],
+     "fa": 60,
+     "fb": 60
+    }
+   ],
+   [
+    "Slam",
+    {
+     "h": [
+      104,
+      130
+     ],
+     "t": 132,
+     "a": [
+      11.0,
+      11.6
+     ],
+     "b": [
+      9.1,
+      9.7
+     ],
+     "l": [
+      68.8,
+      -17.5
+     ],
+     "m": [
+      65.4,
+      -25.8
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "farmer-carry": {
+  "name": "Farmer carry",
+  "category": "core",
+  "view": "Side view",
+  "default_dose": "3 x 30-40 m",
+  "cues": [
+   "Heavy weight in each hand, arms straight.",
+   "Stand tall, shoulders down and back.",
+   "Walk with short, controlled steps. Don't lean or shuffle."
+  ],
+  "props": {
+   "hold": {
+    "type": "kb",
+    "at": "both"
+   }
+  },
+  "frames": [
+   [
+    "Step",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      2,
+      0
+     ],
+     "b": [
+      -2,
+      0
+     ],
+     "l": [
+      12.2,
+      11.6
+     ],
+     "m": [
+      -10.1,
+      -10.7
+     ]
+    }
+   ],
+   [
+    "Step",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -2,
+      0
+     ],
+     "b": [
+      2,
+      0
+     ],
+     "l": [
+      -10.1,
+      -10.7
+     ],
+     "m": [
+      12.2,
+      11.6
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "ab-wheel": {
+  "name": "Ab wheel rollout",
+  "category": "core",
+  "view": "Side view",
+  "default_dose": "3 x 8",
+  "cues": [
+   "On your knees, wheel under your shoulders, stomach braced.",
+   "Roll out slowly as far as you can without your low back sagging.",
+   "Pull back with your stomach, not your arms.",
+   "Beginner: short range. Advanced: from standing."
+  ],
+  "props": {
+   "hold": {
+    "type": "wheel",
+    "at": "near"
+   }
+  },
+  "frames": [
+   [
+    "Start",
+    {
+     "h": [
+      98,
+      141
+     ],
+     "t": 120,
+     "a": [
+      4.4,
+      5.1
+     ],
+     "b": [
+      2.1,
+      2.9
+     ],
+     "l": [
+      18.924644416051233,
+      -90
+     ],
+     "m": [
+      18.924644416051233,
+      -90
+     ],
+     "fa": 0,
+     "fb": 0,
+     "fl": 6
+    }
+   ],
+   [
+    "Roll out",
+    {
+     "h": [
+      138,
+      152
+     ],
+     "t": 96,
+     "a": [
+      44.6,
+      89.3
+     ],
+     "b": [
+      38.8,
+      93.5
+     ],
+     "l": [
+      -49.398705354995535,
+      -90
+     ],
+     "m": [
+      -49.398705354995535,
+      -90
+     ],
+     "fa": 0,
+     "fb": 0,
+     "fl": 6
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "pogo-hops": {
+  "name": "Pogo hops",
+  "category": "power",
+  "view": "Side view",
+  "default_dose": "3 x 20",
+  "cues": [
+   "Stay on the balls of your feet with your legs nearly straight.",
+   "Bounce off the floor quickly, like the ground is hot.",
+   "Short contact, small height. Springs in the ankles."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Contact",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      20,
+      40
+     ],
+     "b": [
+      -20,
+      -40
+     ],
+     "l": [
+      15.9,
+      -9.7
+     ],
+     "m": [
+      11.5,
+      -14.6
+     ],
+     "fa": 62,
+     "fb": 62
+    }
+   ],
+   [
+    "Air",
+    {
+     "h": [
+      120,
+      96
+     ],
+     "t": 180,
+     "a": [
+      20,
+      40
+     ],
+     "b": [
+      -20,
+      -40
+     ],
+     "l": [
+      21.6,
+      -15.2
+     ],
+     "m": [
+      17.0,
+      -20.2
+     ],
+     "fa": 40,
+     "fb": 40
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "skater-bounds": {
+  "name": "Lateral skater bounds",
+  "category": "power",
+  "view": "Front view",
+  "default_dose": "3 x 6 per side",
+  "cues": [
+   "Push off one leg and bound sideways.",
+   "Land soft on the other leg and hold the landing for a second.",
+   "Knee over toes on the landing. Swing the arms for balance."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Land left",
+    {
+     "h": [
+      96,
+      114
+     ],
+     "t": 192,
+     "a": [
+      -40,
+      -60
+     ],
+     "b": [
+      -70,
+      -80
+     ],
+     "l": [
+      -33.0,
+      26.1
+     ],
+     "m": [
+      55.8,
+      -30.8
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Bound",
+    {
+     "h": [
+      120,
+      92
+     ],
+     "t": 180,
+     "a": [
+      -60,
+      -80
+     ],
+     "b": [
+      60,
+      80
+     ],
+     "l": [
+      -32.4,
+      19.0
+     ],
+     "m": [
+      32.4,
+      -19.0
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Land right",
+    {
+     "h": [
+      144,
+      114
+     ],
+     "t": 168,
+     "a": [
+      70,
+      80
+     ],
+     "b": [
+      40,
+      60
+     ],
+     "l": [
+      -55.8,
+      30.8
+     ],
+     "m": [
+      33.0,
+      -26.1
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Bound",
+    {
+     "h": [
+      120,
+      92
+     ],
+     "t": 180,
+     "a": [
+      -60,
+      -80
+     ],
+     "b": [
+      60,
+      80
+     ],
+     "l": [
+      -32.4,
+      19.0
+     ],
+     "m": [
+      32.4,
+      -19.0
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   2
+  ]
+ },
+ "hollow-hold": {
+  "name": "Hollow hold",
+  "category": "core",
+  "view": "Side view",
+  "default_dose": "3 x 20 sec",
+  "cues": [
+   "Lie on your back, low back pressed into the floor.",
+   "Lift your shoulders and legs just off the floor, arms overhead.",
+   "Hold the banana shape. Beginner: bend the knees (tuck hold)."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Start",
+    {
+     "h": [
+      120,
+      168
+     ],
+     "t": -90,
+     "a": [
+      180,
+      180
+     ],
+     "b": [
+      180,
+      180
+     ],
+     "l": [
+      180,
+      90
+     ],
+     "m": [
+      180,
+      90
+     ],
+     "al": 1,
+     "fl": 12,
+     "fa": 180,
+     "fb": 180
+    }
+   ],
+   [
+    "Hollow hold",
+    {
+     "h": [
+      120,
+      168
+     ],
+     "t": -98,
+     "a": [
+      262,
+      262
+     ],
+     "b": [
+      262,
+      262
+     ],
+     "l": [
+      100,
+      100
+     ],
+     "m": [
+      100,
+      100
+     ],
+     "k": -3
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "bicycle-crunch": {
+  "name": "Bicycle crunch",
+  "category": "core",
+  "view": "Side view",
+  "default_dose": "3 x 15 per side",
+  "cues": [
+   "Hands behind your head, shoulders off the floor.",
+   "Bring one knee in as you turn the opposite elbow toward it.",
+   "Extend the other leg long and switch. Slow and controlled."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Right knee in",
+    {
+     "h": [
+      120,
+      168
+     ],
+     "t": -105,
+     "a": [
+      -201.6,
+      -52.7
+     ],
+     "b": [
+      -189.6,
+      -41.4
+     ],
+     "l": [
+      170,
+      60
+     ],
+     "m": [
+      98,
+      95
+     ]
+    }
+   ],
+   [
+    "Left knee in",
+    {
+     "h": [
+      120,
+      168
+     ],
+     "t": -105,
+     "a": [
+      -201.6,
+      -52.7
+     ],
+     "b": [
+      -189.6,
+      -41.4
+     ],
+     "l": [
+      98,
+      95
+     ],
+     "m": [
+      170,
+      60
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "bird-dog": {
+  "name": "Bird dog",
+  "category": "core",
+  "view": "Side view",
+  "default_dose": "2 x 8 per side, slow",
+  "cues": [
+   "Hands under shoulders, knees under hips, back flat.",
+   "Reach one arm forward and the opposite leg back until both are level with your back.",
+   "Hold for a second without tipping. Return and switch."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Start",
+    {
+     "h": [
+      105,
+      141
+     ],
+     "t": 102.3,
+     "a": [
+      -12.0,
+      13.2
+     ],
+     "b": [
+      -14.2,
+      10.6
+     ],
+     "l": [
+      0,
+      -90
+     ],
+     "m": [
+      0,
+      -90
+     ],
+     "fa": -90,
+     "fb": -90,
+     "fl": 8
+    }
+   ],
+   [
+    "Reach",
+    {
+     "h": [
+      105,
+      141
+     ],
+     "t": 102.3,
+     "a": [
+      95,
+      95
+     ],
+     "b": [
+      -14.2,
+      10.6
+     ],
+     "l": [
+      0,
+      -90
+     ],
+     "m": [
+      -92,
+      -92
+     ],
+     "fa": -90,
+     "fb": -90,
+     "fl": 8
+    }
+   ],
+   [
+    "Start",
+    {
+     "h": [
+      105,
+      141
+     ],
+     "t": 102.3,
+     "a": [
+      -12.0,
+      13.2
+     ],
+     "b": [
+      -14.2,
+      10.6
+     ],
+     "l": [
+      0,
+      -90
+     ],
+     "m": [
+      0,
+      -90
+     ],
+     "fa": -90,
+     "fb": -90,
+     "fl": 8
+    }
+   ],
+   [
+    "Switch",
+    {
+     "h": [
+      105,
+      141
+     ],
+     "t": 102.3,
+     "a": [
+      -12.0,
+      13.2
+     ],
+     "b": [
+      95,
+      95
+     ],
+     "l": [
+      -92,
+      -92
+     ],
+     "m": [
+      0,
+      -90
+     ],
+     "fa": -90,
+     "fb": -90,
+     "fl": 8
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1,
+   3
+  ]
+ },
+ "doorway-chest-stretch": {
+  "name": "Doorway chest stretch",
+  "category": "mobility",
+  "view": "Front view",
+  "default_dose": "30-45 sec per side",
+  "cues": [
+   "Forearm on the door frame, elbow at shoulder height.",
+   "Step through the doorway until you feel it across your chest.",
+   "Keep your shoulder down. Breathe."
+  ],
+  "props": {
+   "wall": 92
+  },
+  "frames": [
+   [
+    "Stand",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -12,
+      -5
+     ],
+     "b": [
+      12,
+      5
+     ],
+     "l": [
+      -10.7,
+      -10.2
+     ],
+     "m": [
+      10.7,
+      10.2
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Forearm on frame",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -90,
+      180
+     ],
+     "b": [
+      12,
+      5
+     ],
+     "l": [
+      -10.7,
+      -10.2
+     ],
+     "m": [
+      10.7,
+      10.2
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "lat-stretch": {
+  "name": "Lat stretch",
+  "category": "mobility",
+  "view": "Side view",
+  "default_dose": "30-45 sec",
+  "cues": [
+   "Hands on a bench, counter, or rail about waist height.",
+   "Walk back and sit your hips back, arms straight.",
+   "Let your chest drop between your arms. Feel it along your sides."
+  ],
+  "props": {
+   "box": [
+    172,
+    40,
+    68
+   ]
+  },
+  "frames": [
+   [
+    "Hands on rail",
+    {
+     "h": [
+      128,
+      104
+     ],
+     "t": 140,
+     "a": [
+      14.9,
+      41.0
+     ],
+     "b": [
+      9.0,
+      43.0
+     ],
+     "l": [
+      0.3,
+      -0.3
+     ],
+     "m": [
+      -4.2,
+      -4.8
+     ]
+    }
+   ],
+   [
+    "Sit back",
+    {
+     "h": [
+      104,
+      110
+     ],
+     "t": 98,
+     "a": [
+      26.5,
+      128.3
+     ],
+     "b": [
+      23.0,
+      130.3
+     ],
+     "l": [
+      32.1,
+      5.8
+     ],
+     "m": [
+      32.4,
+      -3.6
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "quad-stretch": {
+  "name": "Standing quad stretch",
+  "category": "mobility",
+  "view": "Side view",
+  "default_dose": "30-45 sec per side",
+  "cues": [
+   "Stand tall, hand on a wall for balance.",
+   "Pull one heel toward your glute, knees together.",
+   "Squeeze the glute of that leg to deepen it. Don't arch your back."
+  ],
+  "props": {
+   "wall": 170
+  },
+  "frames": [
+   [
+    "Stand",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      7,
+      3
+     ],
+     "b": [
+      71.2,
+      71.9
+     ],
+     "l": [
+      2.6,
+      2.0
+     ],
+     "m": [
+      -2.0,
+      -2.6
+     ]
+    }
+   ],
+   [
+    "Heel to glute",
+    {
+     "h": [
+      120,
+      104
+     ],
+     "t": 180,
+     "a": [
+      -14.8,
+      -14.2
+     ],
+     "b": [
+      71.2,
+      71.9
+     ],
+     "l": [
+      -8,
+      -165
+     ],
+     "m": [
+      -2.0,
+      -2.6
+     ],
+     "fa": -100
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "figure-four-stretch": {
+  "name": "Figure-4 glute stretch",
+  "category": "mobility",
+  "view": "Side view",
+  "default_dose": "30-45 sec per side",
+  "cues": [
+   "Lie on your back, cross one ankle over the opposite knee.",
+   "Grab behind the bottom thigh and pull it toward your chest.",
+   "Keep your head down and breathe into the hip."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Set up",
+    {
+     "h": [
+      120,
+      168
+     ],
+     "t": -90,
+     "a": [
+      150,
+      150
+     ],
+     "b": [
+      150,
+      150
+     ],
+     "l": [
+      160,
+      110
+     ],
+     "m": [
+      180,
+      90
+     ]
+    }
+   ],
+   [
+    "Pull in",
+    {
+     "h": [
+      120,
+      168
+     ],
+     "t": -90,
+     "a": [
+      132.6,
+      132.0
+     ],
+     "b": [
+      134.0,
+      133.3
+     ],
+     "l": [
+      190,
+      120
+     ],
+     "m": [
+      200,
+      110
+     ]
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "cat-cow": {
+  "name": "Cat-cow",
+  "category": "mobility",
+  "view": "Side view",
+  "default_dose": "10 slow reps",
+  "cues": [
+   "Hands under shoulders, knees under hips.",
+   "Cat: round your back up, tuck your chin.",
+   "Cow: let your belly drop, lift your chest and eyes. Move with your breath."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Cat",
+    {
+     "h": [
+      105,
+      141
+     ],
+     "t": 102.3,
+     "a": [
+      -12.0,
+      13.2
+     ],
+     "b": [
+      -14.2,
+      10.6
+     ],
+     "l": [
+      0,
+      -90
+     ],
+     "m": [
+      0,
+      -90
+     ],
+     "fa": -90,
+     "fb": -90,
+     "fl": 8,
+     "k": 10,
+     "n": 60
+    }
+   ],
+   [
+    "Cow",
+    {
+     "h": [
+      105,
+      141
+     ],
+     "t": 102.3,
+     "a": [
+      -12.0,
+      13.2
+     ],
+     "b": [
+      -14.2,
+      10.6
+     ],
+     "l": [
+      0,
+      -90
+     ],
+     "m": [
+      0,
+      -90
+     ],
+     "fa": -90,
+     "fb": -90,
+     "fl": 8,
+     "k": -9,
+     "n": -35
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ },
+ "hip-90-90": {
+  "name": "90/90 hip switch",
+  "category": "mobility",
+  "view": "Front view",
+  "default_dose": "6 per side",
+  "cues": [
+   "Sit tall with both knees bent at 90 degrees, both to one side.",
+   "Lift the knees and rotate them over to the other side.",
+   "Hands behind you for support at first. Stay tall."
+  ],
+  "props": {},
+  "frames": [
+   [
+    "Knees left",
+    {
+     "h": [
+      120,
+      160
+     ],
+     "t": 180,
+     "a": [
+      -21.1,
+      -20.5
+     ],
+     "b": [
+      21.1,
+      20.5
+     ],
+     "l": [
+      -117.3,
+      21.3
+     ],
+     "m": [
+      -63.4,
+      88.5
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Knees up",
+    {
+     "h": [
+      120,
+      160
+     ],
+     "t": 180,
+     "a": [
+      -21.1,
+      -20.5
+     ],
+     "b": [
+      21.1,
+      20.5
+     ],
+     "l": [
+      -115.4,
+      25.4
+     ],
+     "m": [
+      115.4,
+      -25.4
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Knees right",
+    {
+     "h": [
+      120,
+      160
+     ],
+     "t": 180,
+     "a": [
+      -21.1,
+      -20.5
+     ],
+     "b": [
+      21.1,
+      20.5
+     ],
+     "l": [
+      63.4,
+      -88.5
+     ],
+     "m": [
+      117.3,
+      -21.3
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ],
+   [
+    "Knees up",
+    {
+     "h": [
+      120,
+      160
+     ],
+     "t": 180,
+     "a": [
+      -21.1,
+      -20.5
+     ],
+     "b": [
+      21.1,
+      20.5
+     ],
+     "l": [
+      -115.4,
+      25.4
+     ],
+     "m": [
+      115.4,
+      -25.4
+     ],
+     "fl": 5,
+     "fa": -90,
+     "fb": 90
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   2
+  ]
+ },
+ "foam-roll-upper-back": {
+  "name": "Foam roll: upper back",
+  "category": "recovery",
+  "view": "Side view",
+  "default_dose": "60 sec",
+  "cues": [
+   "Roller under your upper back, hands behind your head, hips up.",
+   "Roll slowly from mid-back to the top of your shoulder blades.",
+   "Pause on tight spots and breathe. Stay off your low back."
+  ],
+  "props": {
+   "roller": [
+    104,
+    170,
+    10
+   ]
+  },
+  "frames": [
+   [
+    "Roll up",
+    {
+     "h": [
+      138,
+      158
+     ],
+     "t": -99.9,
+     "a": [
+      -193.6,
+      -44.4
+     ],
+     "b": [
+      -181.7,
+      -34.1
+     ],
+     "l": [
+      117.4,
+      9.5
+     ],
+     "m": [
+      117.8,
+      6.6
+     ],
+     "fa": 90,
+     "fb": 90
+    }
+   ],
+   [
+    "Roll down",
+    {
+     "h": [
+      150,
+      158
+     ],
+     "t": -99.9,
+     "a": [
+      -193.6,
+      -44.4
+     ],
+     "b": [
+      -181.7,
+      -34.1
+     ],
+     "l": [
+      117.5,
+      -8.6
+     ],
+     "m": [
+      116.9,
+      -12.0
+     ],
+     "fa": 90,
+     "fb": 90
+    }
+   ]
+  ],
+  "print_frames": [
+   0,
+   1
+  ]
+ }
+}

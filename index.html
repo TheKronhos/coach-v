@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Coach V</title>
+  <meta name="description" content="Coach V boxing training program: daily sessions, exercise demos, round timer and training log.">
+  <meta name="theme-color" content="#0E0E0E">
+  <meta name="color-scheme" content="dark">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Coach V">
+  <link rel="stylesheet" href="app/styles/app.css">
+  <link rel="stylesheet" href="app/styles/print.css">
+  <link rel="modulepreload" href="app/main.js">
+</head>
+<body>
+  <header class="appbar">
+    <a class="brand" href="#/today">COACH V</a>
+    <a class="btn-icon" href="#/settings" aria-label="Settings">⚙</a>
+  </header>
+  <div id="banner" hidden></div>
+  <main id="view"><p class="empty">Loading…</p></main>
+  <nav class="tabs" aria-label="Main">
+    <a href="#/today" data-tab="today"><span aria-hidden="true">●</span>Today</a>
+    <a href="#/week" data-tab="week"><span aria-hidden="true">▦</span>Week</a>
+    <a href="#/library" data-tab="library"><span aria-hidden="true">☰</span>Library</a>
+    <a href="#/timer" data-tab="timer"><span aria-hidden="true">⏱</span>Timer</a>
+    <a href="#/log" data-tab="log"><span aria-hidden="true">✎</span>Log</a>
+  </nav>
+  <script type="module" src="app/main.js"></script>
+</body>
+</html>

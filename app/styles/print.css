@@ -1,0 +1,51 @@
+/* Printable day guide: light, Letter/A4, laid out like reference/*.pdf */
+.print-toolbar { display: flex; justify-content: space-between; gap: 10px; margin: 8px 0 12px; }
+.paper {
+  --p-red: #B3261E; --p-text: #1F1F1F; --p-muted: #6B6B6B; --p-line: #CFCFCF;
+  background: #fff; color: var(--p-text); color-scheme: light;
+  font: 10.5pt/1.35 Helvetica, Arial, sans-serif; padding: 28px 32px; border-radius: 6px;
+  max-width: 8.5in; margin: 0 auto; position: relative;
+}
+.paper .p-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid var(--p-red); padding-bottom: 4px; font-size: 9.5pt; color: #444; }
+.paper .p-brand { color: var(--p-red); font-weight: 700; }
+.paper { display: flex; flex-direction: column; }
+.paper .p-footer { font-size: 8.5pt; color: #444; margin-top: 18px; order: 2; }
+.paper .p-layout { width: 100%; border-collapse: collapse; }
+.paper .p-layout td { padding: 0; }
+.paper h1 { font-size: 21pt; margin: 14px 0 2px; color: var(--p-text); }
+.paper .p-meta { color: #444; font-size: 11pt; margin: 0 0 4px; }
+.paper .p-emph { font-style: italic; margin: 2px 0 6px; }
+.paper .p-safety { border-left: 3px solid var(--p-red); padding-left: 8px; }
+.paper .p-sec h2 { color: var(--p-red); font-size: 14pt; border-bottom: 1px solid var(--p-line); padding-bottom: 3px; margin: 14px 0 4px; break-after: avoid; }
+.paper .p-format { font-style: italic; color: #555; margin: 0 0 8px; }
+.paper .p-item { display: grid; grid-template-columns: 34% 1fr; gap: 14px; margin: 10px 0 14px; break-inside: avoid; page-break-inside: avoid; }
+.paper .p-text h3 { font-size: 12pt; margin: 0 0 2px; }
+.paper .p-dose { color: var(--p-red); font-weight: 700; font-size: 9.5pt; margin: 0; }
+.paper .p-view { color: #8A8A8A; font-style: italic; font-size: 9pt; margin: 0 0 2px; }
+.paper .p-text ol { margin: 2px 0 0; padding-left: 1.3em; font-size: 9.5pt; color: #333; }
+.paper .p-text p { font-size: 9.5pt; }
+.paper .p-frames { display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start; }
+.paper .p-frame { margin: 0; width: calc((100% - 20px) / 3); max-width: 1.65in; }
+.paper .p-frame svg { display: block; width: 100%; height: auto; border: 1px solid var(--p-line); border-radius: 8px; background: #fff; }
+.paper .p-frame figcaption { text-align: center; font-weight: 700; font-size: 9pt; color: #555; margin-top: 3px; }
+.paper .p-fw { margin: 0; width: calc((100% - 20px) / 3); max-width: 1.4in; border: 1px solid var(--p-line); border-radius: 8px; padding-top: 6px; }
+.paper .p-fw figcaption { text-align: center; font-weight: 700; font-size: 8.5pt; }
+.paper .p-fw svg { display: block; width: 100%; height: auto; }
+.paper .p-bullets { margin: 6px 0; padding-left: 1.4em; }
+.paper .p-space-top, .paper .p-space-bottom { height: 0; }
+
+@media print {
+  @page { size: letter; margin: 0.5in 0.55in 0.55in; }
+  :root { color-scheme: light; }
+  html, body { background: #fff !important; color: #000; padding: 0 !important; }
+  .appbar, .tabs, #banner, .no-print, .toast { display: none !important; }
+  main { padding: 0; max-width: none; }
+  .paper { display: block; max-width: none; padding: 0; border-radius: 0; font-size: 10pt; }
+  /* Running header/footer on every page; thead/tfoot spacers keep content clear of them. */
+  .paper .p-header { position: fixed; top: 0; left: 0; right: 0; background: #fff; }
+  .paper .p-footer { position: fixed; bottom: 0; left: 0; right: 0; margin: 0; background: #fff; }
+  .paper .p-space-top { height: 30px; }
+  .paper .p-space-bottom { height: 26px; }
+  .paper .p-item { grid-template-columns: 2.6in 1fr; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

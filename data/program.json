@@ -1,0 +1,489 @@
+{
+  "athlete": {
+    "level": "beginner",
+    "goal": "weight loss",
+    "equipment": [
+      "heavy bag",
+      "speed bag",
+      "double-end bag",
+      "full gym",
+      "rower"
+    ],
+    "stance": "orthodox"
+  },
+  "start_date": "2026-09-27",
+  "week_starts": "sunday",
+  "rules": [
+    "Wrap hands every session; 14-16 oz bag gloves.",
+    "Rounds start at 2 min work / 1 min rest.",
+    "Run Weeks 1-2 exactly as written.",
+    "Sharp pain means stop.",
+    "Log date, RPE hit, weights, anything that felt off."
+  ],
+  "round_timer_default": {
+    "work_sec": 120,
+    "rest_sec": 60,
+    "warning_sec": 10
+  },
+  "standard_warmup": {
+    "name": "Standard warm-up",
+    "minutes": "12-14",
+    "items": [
+      "Rower: 3 x 2 min, 30 sec rest. Easy, moderate, a little brisker. 20-24 strokes/min, damper 3-5.",
+      "Dynamic mobility (3-4 min): arm circles 10 each direction, leg swings 10 per leg, hip circles 10 each way, world's greatest stretch 3 per side, bodyweight squats 10, band pull-aparts 15.",
+      "Stance bounce: 90 sec, light on the balls of the feet, shifting forward, back, side to side.",
+      "Shadowbox: 2 x 2 min at 50%. Stance, hands up, chin down, breathe out on every punch."
+    ],
+    "notes": "Saturdays only: add 2-3 min jump rope right after the rower."
+  },
+  "days": {
+    "sunday": {
+      "focus": "Aerobic engine & shadow flow",
+      "rpe": "5",
+      "minutes": "~50",
+      "type": "training",
+      "warmup": {
+        "items": [
+          "Brisk walk 5 min.",
+          "Dynamic mobility from the standard warm-up."
+        ]
+      },
+      "blocks": [
+        {
+          "name": "Zone 2 cardio",
+          "items": [
+            "Incline treadmill walk, easy jog, bike, or rower at a pace where you can talk in full sentences."
+          ],
+          "scaling": {
+            "beginner": "20-25 min",
+            "intermediate": "30 min",
+            "advanced": "35-40 min"
+          }
+        },
+        {
+          "name": "Shadow flow",
+          "format": "4 x 2 min at 50-60%, 1 min rest",
+          "items": [
+            "Review what you drilled this week. Slow and clean. Picture an opponent."
+          ],
+          "first_session_version": [
+            "R1: stance and step-drag footwork, no punches",
+            "R2: jab only",
+            "R3: cross only",
+            "R4: easy 1-2s with a step in and out"
+          ]
+        }
+      ],
+      "core": [
+        "Dead bug: 2 x 10 per side",
+        "Glute bridge: 2 x 15",
+        "Side plank: 2 x 20 sec per side"
+      ],
+      "cooldown": {
+        "minutes": "10",
+        "items": [
+          "Full-body mobility flow: hip flexors, hamstrings, T-spine (open book), shoulders (cross-body), wrists, calves. 30-45 sec each."
+        ]
+      }
+    },
+    "monday": {
+      "focus": "Fundamentals & footwork",
+      "rpe": "6",
+      "minutes": "~60",
+      "type": "training",
+      "warmup": "standard",
+      "blocks": [
+        {
+          "name": "Footwork drills",
+          "minutes": "12",
+          "items": [
+            "Step-drag in 4 directions: 4 x 1 min, 30 sec rest. Foot closest to the direction moves first; never cross or bring feet together.",
+            "Pivot drill: 2 x 1 min.",
+            "In-and-out drill: 3 x 30 sec."
+          ]
+        },
+        {
+          "name": "Technical shadowboxing",
+          "format": "4 x 2 min, 1 min rest",
+          "items": [
+            "R1: jab only (single, double, jab while stepping forward)",
+            "R2: cross, then the 1-2",
+            "R3: 1-2, then step back out of range",
+            "R4: freestyle 1, 2, and 1-1-2 with footwork"
+          ]
+        },
+        {
+          "name": "Technical heavy bag",
+          "format": "5 x 2 min, 1 min rest, 60% power",
+          "items": [
+            "R1: jabs while circling the bag",
+            "R2: 1-2",
+            "R3: 1-2-3 (lead hook short, elbow at shoulder height)",
+            "R4: 1-1-2",
+            "R5: freestyle, moving after every combo"
+          ]
+        },
+        {
+          "name": "Speed bag intro",
+          "format": "3 x 2 min, 1 min rest",
+          "items": [
+            "Fists at eye level, rhythm over power."
+          ]
+        }
+      ],
+      "core": [
+        "Dead bug: 3 x 10 per side",
+        "Plank: 3 x 30 sec",
+        "Side plank: 2 x 20 sec per side"
+      ],
+      "cooldown": {
+        "minutes": "8",
+        "items": [
+          "3 min easy walk.",
+          "Stretch 30-45 sec each: chest (doorway), lats, hip flexors, hamstrings, calves.",
+          "1 min slow breathing: 4 in, 6 out."
+        ]
+      }
+    },
+    "tuesday": {
+      "focus": "Active recovery",
+      "rpe": "2-3",
+      "minutes": "25-30",
+      "type": "recovery",
+      "note": "For recovering, not training. If you finish sweaty, you did too much.",
+      "items": [
+        "Easy walk: 15-20 min, relaxed pace.",
+        "Foam roll: 30-60 sec each on quads, outer thigh, glutes, upper back, lats, calves.",
+        "Mobility: 90/90 hip switches (6 per side), cat-cow (10), thoracic open books (6 per side), wrist circles and forearm stretches.",
+        "Light shadowboxing: 3 x 2 min at 30%. Slow and smooth.",
+        "Breathing: 3-5 min slow nasal breathing with a long exhale."
+      ],
+      "emphasis": "Extra time on shoulders and upper back."
+    },
+    "wednesday": {
+      "focus": "Heavy bag power & conditioning",
+      "rpe": "7-8",
+      "minutes": "~65",
+      "type": "training",
+      "warmup": "standard",
+      "warmup_extra": "1 round on the bag at 50% to find range.",
+      "blocks": [
+        {
+          "name": "Power rounds",
+          "format": "5 x 2 min, 1 min rest",
+          "items": [
+            "One combo at 80-85%, reset, breathe, repeat.",
+            "R1: hard 1-2",
+            "R2: cross only, turning the rear hip",
+            "R3: 1-2-3",
+            "R4: 1-2-3-2",
+            "R5: freestyle power combos, moving between them"
+          ]
+        },
+        {
+          "name": "Bag intervals",
+          "format": "4 rounds",
+          "items": [
+            "Straight punches as fast as possible, then active rest."
+          ],
+          "scaling": {
+            "beginner": "20 on / 40 off",
+            "intermediate": "30 on / 30 off",
+            "advanced": "40 on / 20 off"
+          }
+        },
+        {
+          "name": "Bag + bodyweight circuit",
+          "format": "3 rounds, 90 sec rest",
+          "items": [
+            "45 sec bag combos",
+            "15 bodyweight squats",
+            "8-10 push-ups (beginner: hands on bench; advanced: clap or deficit)",
+            "20 mountain climbers"
+          ]
+        }
+      ],
+      "core": [
+        "Cable Pallof press: 3 x 10 per side",
+        "Hanging knee raise: 3 x 8 (beginner: lying leg raise)",
+        "Bear crawl: 3 x 15-20 m"
+      ],
+      "cooldown": {
+        "minutes": "8",
+        "items": [
+          "5 min easy bike.",
+          "Stretch shoulders, forearms and wrists, thoracic rotation, hips."
+        ]
+      },
+      "safety": "If a wrist hurts on impact, drop to 60% and check you're landing on the first two knuckles with a straight wrist. Persistent pain: stop and get it checked."
+    },
+    "thursday": {
+      "focus": "Strength & conditioning (peak day)",
+      "rpe": "8",
+      "minutes": "~65",
+      "type": "training",
+      "warmup": {
+        "items": [
+          "5 min easy rower or bike",
+          "Dynamic mobility from the standard warm-up",
+          "1-2 light ramp-up sets before the first lift"
+        ]
+      },
+      "blocks": [
+        {
+          "name": "Power",
+          "items": [
+            "Med ball rotational wall throw: 3 x 5 per side",
+            "Box jump: 3 x 5, step down (beginner: squat jump onto low box or no box)"
+          ]
+        },
+        {
+          "name": "Strength",
+          "items": [
+            "A. Trap bar deadlift: 3 x 8, 2 min rest (beginner: KB deadlift 3 x 10; advanced: 4 x 5 heavier)",
+            "B1. Goblet squat 3 x 10 / B2. Single-arm DB row 3 x 10 per side, 90 sec rest after each pair",
+            "C1. DB split squat 3 x 8 per side / C2. Half-kneeling landmine press 3 x 8 per side, 90 sec rest after each pair"
+          ],
+          "note": "Last 2 reps hard, form clean."
+        },
+        {
+          "name": "Metabolic finisher",
+          "format": "12 min EMOM (4 cycles)",
+          "items": [
+            "Min 1: kettlebell swings x 12",
+            "Min 2: rower x 10 cal (beginner 8, advanced 14)",
+            "Min 3: med ball slams x 10"
+          ],
+          "note": "Beginner option: 30 sec work, rest remainder of each minute."
+        }
+      ],
+      "core": [
+        "Farmer carry: 3 x 30-40 m, heavy",
+        "Ab wheel rollout: 3 x 8 (beginner: from knees, short range; advanced: standing)",
+        "Side plank: 2 x 30 sec per side"
+      ],
+      "cooldown": {
+        "minutes": "8",
+        "items": [
+          "Easy walk or bike, stretch hips, hamstrings, quads, lats.",
+          "2 min box breathing: 4 in, hold 4, out 4, hold 4."
+        ]
+      }
+    },
+    "friday": {
+      "focus": "Active recovery",
+      "rpe": "2-3",
+      "minutes": "25-30",
+      "type": "recovery",
+      "note": "For recovering, not training. If you finish sweaty, you did too much.",
+      "items": [
+        "Easy walk: 15-20 min, relaxed pace.",
+        "Foam roll: 30-60 sec each on quads, outer thigh, glutes, upper back, lats, calves.",
+        "Mobility: 90/90 hip switches (6 per side), cat-cow (10), thoracic open books (6 per side), wrist circles and forearm stretches.",
+        "Light shadowboxing: 3 x 2 min at 30%. Slow and smooth.",
+        "Breathing: 3-5 min slow nasal breathing with a long exhale."
+      ],
+      "emphasis": "Extra time on legs and hips."
+    },
+    "saturday": {
+      "focus": "Speed, rhythm & footwork",
+      "rpe": "6-7",
+      "minutes": "~55",
+      "type": "training",
+      "warmup": "standard",
+      "warmup_extra": "2-3 min jump rope after the rower.",
+      "blocks": [
+        {
+          "name": "Double-end bag",
+          "format": "4 x 2 min, 1 min rest",
+          "items": [
+            "R1: jab only, learn the timing",
+            "R2: 1-2",
+            "R3: jab, then slip the return",
+            "R4: freestyle with movement"
+          ]
+        },
+        {
+          "name": "Speed bag",
+          "format": "3 x 2 min, 1 min rest",
+          "items": [
+            "Rhythm, not power."
+          ]
+        },
+        {
+          "name": "Footwork & angles",
+          "items": [
+            "Agility ladder: 6 passes",
+            "Lateral shuffle between cones 3 m apart: 4 x 20 sec, 40 sec rest",
+            "Angle-out shadow drill: 3 x 2 min. 1-2, then pivot or step off to the side."
+          ]
+        },
+        {
+          "name": "Light plyos",
+          "items": [
+            "Pogo hops: 3 x 20",
+            "Lateral skater bounds: 3 x 6 per side, land soft"
+          ]
+        }
+      ],
+      "core": [
+        "Hollow hold: 3 x 20 sec (beginner: bent-knee tuck)",
+        "Bicycle crunch: 3 x 15 per side",
+        "Bird dog: 2 x 8 per side, slow"
+      ],
+      "cooldown": {
+        "minutes": "8",
+        "items": [
+          "3 min walk, stretch calves, hip flexors, glutes, shoulders."
+        ]
+      }
+    }
+  },
+  "schedule_weeks_1_2": [
+    {
+      "date": "2026-09-27",
+      "day": "sunday",
+      "note": "First-session version of shadow flow"
+    },
+    {
+      "date": "2026-09-28",
+      "day": "monday",
+      "note": ""
+    },
+    {
+      "date": "2026-09-29",
+      "day": "tuesday",
+      "note": ""
+    },
+    {
+      "date": "2026-09-30",
+      "day": "wednesday",
+      "note": ""
+    },
+    {
+      "date": "2026-10-01",
+      "day": "thursday",
+      "note": ""
+    },
+    {
+      "date": "2026-10-02",
+      "day": "friday",
+      "note": ""
+    },
+    {
+      "date": "2026-10-03",
+      "day": "saturday",
+      "note": ""
+    },
+    {
+      "date": "2026-10-04",
+      "day": "sunday",
+      "note": ""
+    },
+    {
+      "date": "2026-10-05",
+      "day": "monday",
+      "note": ""
+    },
+    {
+      "date": "2026-10-06",
+      "day": "tuesday",
+      "note": ""
+    },
+    {
+      "date": "2026-10-07",
+      "day": "wednesday",
+      "note": ""
+    },
+    {
+      "date": "2026-10-08",
+      "day": "thursday",
+      "note": ""
+    },
+    {
+      "date": "2026-10-09",
+      "day": "friday",
+      "note": ""
+    },
+    {
+      "date": "2026-10-10",
+      "day": "saturday",
+      "note": "Check-in with log after this session"
+    }
+  ],
+  "progression": [
+    {
+      "weeks": "1-2",
+      "change": "Run exactly as written."
+    },
+    {
+      "weeks": "3-4",
+      "change": "Add 1 round to each bag and shadow block."
+    },
+    {
+      "weeks": "5-6",
+      "change": "Move to 3-minute rounds; add load to lifts."
+    },
+    {
+      "weeks": "7",
+      "change": "Deload: cut volume by about a third, same schedule."
+    }
+  ],
+  "early_3min_test": "Move to 3-min rounds early only if hands stay up, punches snap, and feet keep moving at the bell of every round, including the last one on heavy bag day.",
+  "scaling": [
+    {
+      "exercise": "Bag rounds",
+      "beginner": "2 min / 1 min rest",
+      "intermediate": "3 min / 1 min rest",
+      "advanced": "3 min / 45 sec rest"
+    },
+    {
+      "exercise": "Push-ups",
+      "beginner": "Hands on bench",
+      "intermediate": "Standard",
+      "advanced": "Deficit or clap"
+    },
+    {
+      "exercise": "Deadlift",
+      "beginner": "KB deadlift 3 x 10",
+      "intermediate": "Trap bar 3 x 8",
+      "advanced": "Trap bar 4 x 5, heavy"
+    },
+    {
+      "exercise": "Box jump",
+      "beginner": "Squat jump / low box",
+      "intermediate": "Mid box",
+      "advanced": "High box or single-leg"
+    },
+    {
+      "exercise": "Rower in EMOM",
+      "beginner": "8 cal",
+      "intermediate": "10 cal",
+      "advanced": "14 cal"
+    },
+    {
+      "exercise": "Zone 2 cardio",
+      "beginner": "20-25 min",
+      "intermediate": "30 min",
+      "advanced": "35-40 min"
+    }
+  ],
+  "nutrition_notes": "Modest calorie deficit, protein at every meal, 7-9 hours sleep, walk on off days. Track weekly average weight, not daily.",
+  "data_version": "1.1",
+  "blocks": [
+    {
+      "id": "block-1",
+      "name": "Weeks 1-2: Foundations",
+      "start": "2026-09-27",
+      "end": "2026-10-10",
+      "days_file": "days.json",
+      "check_in": "Export your log and check in with Coach V for Block 2."
+    }
+  ],
+  "block_rules": [
+    "Sessions come only from the active block's days file. Never modify sessions automatically.",
+    "After the last block ends: keep showing the last block's sessions, and show a persistent banner with that block's check_in message.",
+    "The progression list is coaching guidance to display, not rules to apply.",
+    "New blocks arrive as an update bundle (JSON) imported in-app. Validate every exercise and footwork reference before accepting it."
+  ]
+}

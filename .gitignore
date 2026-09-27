@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Node (not used at runtime; kept out in case tooling is added)
+node_modules/
+npm-debug.log*
+
+# Local scratch
+*.log
+tmp/

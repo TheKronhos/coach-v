@@ -1,0 +1,799 @@
+{
+ "description": "Top-down orthodox footprints. Panel 170 wide x 215 tall, origin top-left, y down; top of panel = toward opponent. angle = footprint rotation in degrees, clockwise from pointing up. Each frame lists feet, optional ghosts (starting positions, drawn dashed) and arrows [x1,y1,x2,y2]. Southpaw = mirror horizontally.",
+ "rule": "The foot closest to where you're going moves first. Never cross your feet or bring them together.",
+ "sequences": [
+  {
+   "name": "Stance",
+   "frames": [
+    {
+     "title": "Orthodox stance",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 100,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "cue": "Feet shoulder-width, lead toes slightly in, rear foot ~45 degrees heel up, knees soft, hands up."
+    }
+   ]
+  },
+  {
+   "name": "Step forward",
+   "frames": [
+    {
+     "title": "1. Set your stance",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 100,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ]
+    },
+    {
+     "title": "2. Lead foot forward",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 58,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 100,
+       "angle": 15
+      }
+     ],
+     "arrows": [
+      [
+       46,
+       106,
+       46,
+       56
+      ]
+     ],
+     "cue": "Push off the rear foot. Lead foot steps forward first."
+    },
+    {
+     "title": "3. Rear foot follows",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 58,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 104,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "arrows": [
+      [
+       144,
+       152,
+       144,
+       100
+      ]
+     ],
+     "cue": "Rear foot drags up the same distance."
+    }
+   ]
+  },
+  {
+   "name": "Step back",
+   "frames": [
+    {
+     "title": "1. Set your stance",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 100,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ]
+    },
+    {
+     "title": "2. Rear foot back",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 100,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 188,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "arrows": [
+      [
+       144,
+       140,
+       144,
+       192
+      ]
+     ],
+     "cue": "Push off the lead foot. Rear foot steps back first."
+    },
+    {
+     "title": "3. Lead foot follows",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 142,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 188,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 100,
+       "angle": 15
+      }
+     ],
+     "arrows": [
+      [
+       46,
+       96,
+       46,
+       148
+      ]
+     ],
+     "cue": "Lead foot slides back the same distance."
+    }
+   ]
+  },
+  {
+   "name": "Step left",
+   "frames": [
+    {
+     "title": "1. Set your stance",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 92,
+       "y": 100,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 134,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ]
+    },
+    {
+     "title": "2. Lead foot left",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 52,
+       "y": 100,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 134,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "lead",
+       "x": 92,
+       "y": 100,
+       "angle": 15
+      }
+     ],
+     "arrows": [
+      [
+       96,
+       70,
+       48,
+       70
+      ]
+     ],
+     "cue": "Lead foot steps left first."
+    },
+    {
+     "title": "3. Rear foot follows",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 52,
+       "y": 100,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 94,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "rear",
+       "x": 134,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "arrows": [
+      [
+       140,
+       178,
+       90,
+       178
+      ]
+     ],
+     "cue": "Rear foot follows. Never cross your feet."
+    }
+   ]
+  },
+  {
+   "name": "Step right",
+   "frames": [
+    {
+     "title": "1. Set your stance",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 52,
+       "y": 100,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 94,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ]
+    },
+    {
+     "title": "2. Rear foot right",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 52,
+       "y": 100,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 134,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "rear",
+       "x": 94,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "arrows": [
+      [
+       90,
+       178,
+       140,
+       178
+      ]
+     ],
+     "cue": "Rear foot steps right first."
+    },
+    {
+     "title": "3. Lead foot follows",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 92,
+       "y": 100,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 134,
+       "y": 146,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "lead",
+       "x": 52,
+       "y": 100,
+       "angle": 15
+      }
+     ],
+     "arrows": [
+      [
+       48,
+       70,
+       96,
+       70
+      ]
+     ],
+     "cue": "Lead foot follows. Never bring feet together."
+    }
+   ]
+  },
+  {
+   "name": "Pivot",
+   "pivot": {
+    "lead_center": [
+     60,
+     112
+    ],
+    "rear_offset_from_lead": [
+     42,
+     46
+    ],
+    "rotation_steps_deg": [
+     0,
+     -35,
+     -70
+    ]
+   },
+   "note": "Rotate the whole stance counterclockwise around the ball of the lead foot by the listed degrees. Lead foot rotates in place; rear foot swings on an arc. Draw an arc arrow for the rear foot's path.",
+   "frames": [
+    {
+     "title": "1. Set your stance"
+    },
+    {
+     "title": "2. Start the turn",
+     "cue": "Stay on the ball of your lead foot. Rear foot swings around."
+    },
+    {
+     "title": "3. Finish the pivot",
+     "cue": "New angle, same stance shape. Hands up."
+    }
+   ]
+  },
+  {
+   "name": "In and out",
+   "rule": "Both feet move together. Bounce in, bounce out.",
+   "frames": [
+    {
+     "title": "1. Set your stance",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 120,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 166,
+       "angle": 45,
+       "heel_up": true
+      }
+     ]
+    },
+    {
+     "title": "2. Bounce in",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 82,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 128,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 120,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 166,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "arrows": [
+      [
+       46,
+       124,
+       46,
+       78
+      ],
+      [
+       144,
+       172,
+       144,
+       124
+      ]
+     ],
+     "cue": "Small push off both feet. Land in your stance."
+    },
+    {
+     "title": "3. Bounce out",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 120,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 166,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "lead",
+       "x": 72,
+       "y": 82,
+       "angle": 15
+      },
+      {
+       "foot": "rear",
+       "x": 114,
+       "y": 128,
+       "angle": 45,
+       "heel_up": true
+      }
+     ],
+     "arrows": [
+      [
+       46,
+       78,
+       46,
+       124
+      ],
+      [
+       144,
+       124,
+       144,
+       172
+      ]
+     ],
+     "cue": "Straight back out of range. Hands up the whole time."
+    }
+   ]
+  },
+  {
+   "name": "Lateral shuffle",
+   "rule": "Square athletic stance. The foot closest to where you're going moves first. Never cross or click your heels.",
+   "frames": [
+    {
+     "title": "1. Athletic stance",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 60,
+       "y": 110,
+       "angle": 0,
+       "label": "L"
+      },
+      {
+       "foot": "rear",
+       "x": 110,
+       "y": 110,
+       "angle": 0,
+       "heel_up": false,
+       "label": "R"
+      }
+     ],
+     "cue": "Feet wider than shoulders, knees bent, chest up."
+    },
+    {
+     "title": "2. Right foot steps",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 60,
+       "y": 110,
+       "angle": 0,
+       "label": "L"
+      },
+      {
+       "foot": "rear",
+       "x": 140,
+       "y": 110,
+       "angle": 0,
+       "heel_up": false,
+       "label": "R"
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "rear",
+       "x": 110,
+       "y": 110,
+       "angle": 0,
+       "heel_up": false
+      }
+     ],
+     "arrows": [
+      [
+       108,
+       150,
+       146,
+       150
+      ]
+     ],
+     "cue": "Push off the left foot. Right foot steps right."
+    },
+    {
+     "title": "3. Left foot follows",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 90,
+       "y": 110,
+       "angle": 0,
+       "label": "L"
+      },
+      {
+       "foot": "rear",
+       "x": 140,
+       "y": 110,
+       "angle": 0,
+       "heel_up": false,
+       "label": "R"
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "lead",
+       "x": 60,
+       "y": 110,
+       "angle": 0
+      }
+     ],
+     "arrows": [
+      [
+       56,
+       70,
+       94,
+       70
+      ]
+     ],
+     "cue": "Left foot follows the same distance. Stay low."
+    }
+   ]
+  },
+  {
+   "name": "Agility ladder",
+   "rule": "Two feet in every square. Quick, light feet.",
+   "lines": [
+    [
+     40,
+     30,
+     130,
+     30
+    ],
+    [
+     40,
+     85,
+     130,
+     85
+    ],
+    [
+     40,
+     140,
+     130,
+     140
+    ],
+    [
+     40,
+     195,
+     130,
+     195
+    ],
+    [
+     40,
+     30,
+     40,
+     195
+    ],
+    [
+     130,
+     30,
+     130,
+     195
+    ]
+   ],
+   "frames": [
+    {
+     "title": "1. Both feet in",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 68,
+       "y": 170,
+       "angle": 0,
+       "label": "L"
+      },
+      {
+       "foot": "rear",
+       "x": 102,
+       "y": 170,
+       "angle": 0,
+       "heel_up": false,
+       "label": "R"
+      }
+     ]
+    },
+    {
+     "title": "2. Left foot in",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 68,
+       "y": 115,
+       "angle": 0,
+       "label": "L"
+      },
+      {
+       "foot": "rear",
+       "x": 102,
+       "y": 170,
+       "angle": 0,
+       "heel_up": false,
+       "label": "R"
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "lead",
+       "x": 68,
+       "y": 170,
+       "angle": 0
+      }
+     ],
+     "arrows": [
+      [
+       22,
+       174,
+       22,
+       112
+      ]
+     ],
+     "cue": "Left foot into the next square."
+    },
+    {
+     "title": "3. Right foot in",
+     "feet": [
+      {
+       "foot": "lead",
+       "x": 68,
+       "y": 115,
+       "angle": 0,
+       "label": "L"
+      },
+      {
+       "foot": "rear",
+       "x": 102,
+       "y": 115,
+       "angle": 0,
+       "heel_up": false,
+       "label": "R"
+      }
+     ],
+     "ghosts": [
+      {
+       "foot": "rear",
+       "x": 102,
+       "y": 170,
+       "angle": 0,
+       "heel_up": false
+      }
+     ],
+     "arrows": [
+      [
+       150,
+       174,
+       150,
+       112
+      ]
+     ],
+     "cue": "Right foot follows. Repeat to the end."
+    }
+   ]
+  }
+ ]
+}
