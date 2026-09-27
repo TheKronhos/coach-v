@@ -13,6 +13,7 @@ export async function renderSettings() {
   const root = el(`
     <div class="settings">
       <h1>Settings</h1>
+      <p class="app-version">Version ${esc(APP_VERSION)}</p>
 
       <section class="card">
         <h2>Program</h2>
@@ -42,7 +43,6 @@ export async function renderSettings() {
       <section class="card">
         <h2>Device</h2>
         <p class="small">Offline storage: ${persisted === true ? '<b>persistent</b>' : persisted === false ? 'best-effort (install the app to the home screen to keep data safer)' : 'unknown'}</p>
-        <p class="small">App version ${esc(APP_VERSION)}</p>
         <button class="btn check-update">Check for app update</button>
       </section>
     </div>`);

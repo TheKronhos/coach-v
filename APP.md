@@ -25,11 +25,15 @@ Open the app once while online. After that it runs fully offline.
 
 ## Shipping a change
 
-Any change to a file listed in `sw.js` needs both of these, or devices keep the old cached copy:
-1. Bump `CACHE_VERSION` in `sw.js`.
-2. Bump `APP_VERSION` in `app/version.js`.
+Every change, including data updates, follows the same steps:
 
-After that, open devices show a *New version ready → Reload* prompt. `node tools/check.mjs` fails if a runtime file is missing from the precache list.
+```bash
+node tools/bump.mjs          # 1.1 -> 1.2 in app/version.js AND sw.js (or: node tools/bump.mjs 2.0)
+node tools/check.mjs         # fails if the two versions differ or a file is missing from the cache list
+git commit -am "..." && git push
+```
+
+GitHub Pages redeploys on every push to `main`, usually within a minute. Open devices show *New version ready → Reload*. Settings shows **Version x.y**, so you can confirm each device picked up the update.
 
 ## Where things live
 

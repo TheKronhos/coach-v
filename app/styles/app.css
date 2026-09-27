@@ -198,6 +198,7 @@ legend { font-weight: 700; margin-bottom: 6px; }
 .log-main small:not(.muted) { color: var(--text); }
 
 /* ---- settings ---- */
+.app-version { font-size: 1.25rem; font-weight: 800; color: var(--teal); margin: 0 0 8px; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; margin: 12px 0; }
 .card h2 { margin-bottom: 6px; }
 .blocks { padding-left: 1.2em; }

@@ -45,6 +45,12 @@ test('sw.js precache covers every runtime file and nothing missing', () => {
   assert.deepEqual({ missingFromList, missingOnDisk }, { missingFromList: [], missingOnDisk: [] });
 });
 
+test('app/version.js and sw.js versions match (x.y)', () => {
+  const app = readFileSync(join(root, 'app/version.js'), 'utf8').match(/APP_VERSION = '([^']+)'/)[1];
+  const sw = readFileSync(join(root, 'sw.js'), 'utf8').match(/CACHE_VERSION = 'coach-v-([^']+)'/)[1];
+  assert.match(app, /^\d+\.\d+$/); assert.equal(sw, app);
+});
+
 // ---- update bundles ----
 const days2 = JSON.parse(JSON.stringify(daysFiles['days.json']));
 const goodBundle = {

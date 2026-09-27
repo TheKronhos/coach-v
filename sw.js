@@ -1,6 +1,6 @@
 // Service worker: precache everything the app needs, serve cache-first, work fully offline.
 // Bump CACHE_VERSION (and APP_VERSION in app/version.js) whenever any file below changes.
-const CACHE_VERSION = 'coach-v-1.0.0';
+const CACHE_VERSION = 'coach-v-1.1';
 
 const PRECACHE = [
   './',
