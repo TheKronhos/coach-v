@@ -1,7 +1,9 @@
 // Loads bundled program data, applies any imported update from IndexedDB,
-// and answers "what session is on this date?".
-import { kvGet, kvSetMany } from './db.js';
+// and runs the rolling session queue.
+import { kvGet, kvSet, kvSetMany } from './db.js';
 import { WEEKDAYS, applyBundle, effective } from './validate.js';
+import * as S from './schedule.js';
+import { addDays } from './schedule.js';
 
 export { WEEKDAYS };
 export const DAY_LABEL = Object.fromEntries(WEEKDAYS.map((d) => [d, d[0].toUpperCase() + d.slice(1)]));
@@ -65,59 +67,49 @@ export async function undoImport() {
 export const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 export const todayISO = () => iso(new Date());
 const utc = (s) => { const [y, m, d] = s.split('-').map(Number); return Date.UTC(y, m - 1, d); };
-export const daysBetween = (a, b) => Math.round((utc(b) - utc(a)) / 86400000);
-export const addDays = (s, n) => { const t = new Date(utc(s) + n * 86400000); return `${t.getUTCFullYear()}-${String(t.getUTCMonth() + 1).padStart(2, '0')}-${String(t.getUTCDate()).padStart(2, '0')}`; };
-export const weekdayOf = (s) => WEEKDAYS[new Date(utc(s)).getUTCDay()];
 export const fmtDate = (s, opts = { weekday: 'short', month: 'short', day: 'numeric' }) =>
   new Date(utc(s)).toLocaleDateString(undefined, { ...opts, timeZone: 'UTC' });
-// Sunday on or before the given date (program weeks start Sunday).
-export const weekStart = (s) => addDays(s, -new Date(utc(s)).getUTCDay());
+// "Today", "Tomorrow", or a short date.
+export function relDate(s, today = todayISO()) {
+  if (s === today) return 'Today';
+  if (s === addDays(today, 1)) return 'Tomorrow';
+  return fmtDate(s);
+}
+export { addDays };
 
-// Resolve which block governs a date.
-//   before the first block -> first block, status "before"
-//   inside a block         -> that block, status "active"
-//   in a gap               -> most recent block that started, status "gap"
-//   after the last block   -> last block, status "ended" (show check-in banner)
-export function blockFor(date) {
-  const bs = state.blocks;
-  if (!bs.length) return null;
-  const n = bs.length;
-  if (date < bs[0].start) return { block: bs[0], index: 0, status: 'before', week: 1 };
-  let i = n - 1;
-  while (i > 0 && bs[i].start > date) i--;
-  const block = bs[i];
-  const status = date <= block.end ? 'active' : (i === n - 1 ? 'ended' : 'gap');
-  const week = Math.floor(daysBetween(weekStart(block.start), date) / 7) + 1;
-  return { block, index: i, status, week };
+// ---- rolling schedule (queue persisted in IndexedDB "queue") ----
+export async function getQueue() {
+  const today = todayISO();
+  let stored = null;
+  try { stored = (await kvGet('queue')) ?? null; } catch (e) { console.warn('IndexedDB unavailable', e); }
+  const q = S.normalize(stored, state.blocks, today);
+  if (!stored || JSON.stringify(stored) !== JSON.stringify(q)) await saveQueue(q);
+  return q;
+}
+export async function saveQueue(q) { try { await kvSet('queue', q); } catch (e) { console.warn('Could not save queue', e); } }
+
+export async function currentSession() {
+  const today = todayISO(), q = await getQueue();
+  const c = S.current(q, state.blocks, today);
+  return { ...c, plan: planFor(c.block, c.day), today };
+}
+export async function upcomingSessions(count) {
+  const today = todayISO();
+  return S.upcoming(await getQueue(), state.blocks, today, count).map((u) => ({ ...u, plan: planFor(u.block, u.day) }));
+}
+// Apply a queue action ('complete' | 'skip' | 'restartCycle' | 'startOver' | 'dismissRestart').
+export async function act(action) {
+  const today = todayISO(), q = await getQueue();
+  const next = action === 'dismissRestart' ? S.dismissRestart(q, today) : S[action](q, state.blocks, today);
+  await saveQueue(next);
+  return { before: q, after: next };
 }
 
-// The session for a date. Before the program starts, show the first session day (Sunday).
-export function sessionFor(date) {
-  const info = blockFor(date);
-  if (!info) return null;
-  const day = info.status === 'before' ? weekdayOf(info.block.start) : weekdayOf(date);
-  const plan = state.daysFiles[info.block.days_file]?.[day];
-  const sched = (state.program.schedule_weeks_1_2 || []).find((s) => s.date === date);
-  return { ...info, date, day, plan, scheduleNote: sched?.note || '' };
-}
+export const planFor = (block, day) => state.daysFiles[block.days_file]?.[day];
+export const activeBlock = async () => S.current(await getQueue(), state.blocks, todayISO()).block;
+export const blockById = (id) => state.blocks.find((b) => b.id === id);
+export { S as schedule };
 
-// A specific weekday's plan, from the block that governs `date` (for the day view).
-export function sessionForDay(day, date) {
-  const info = blockFor(date);
-  if (!info) return null;
-  const plan = state.daysFiles[info.block.days_file]?.[day];
-  const sched = (state.program.schedule_weeks_1_2 || []).find((s) => s.date === date && s.day === day);
-  return { ...info, date, day, plan, scheduleNote: sched?.note || '' };
-}
-
-// Dates on which a given weekday falls inside a block.
-export function blockDatesFor(block, day) {
-  const out = [];
-  for (let d = block.start; d <= block.end; d = addDays(d, 1)) if (weekdayOf(d) === day) out.push(d);
-  return out;
-}
-
-export const lastBlock = () => state.blocks[state.blocks.length - 1];
 export const level = () => state.program.athlete?.level || 'beginner';
 
 export function exerciseFor(item) {
@@ -127,8 +119,8 @@ export function exerciseFor(item) {
 }
 export const footworkFor = (name) => state.footwork.find((s) => s.name === name);
 
-// Which days (in the current block) use an exercise; for the library detail page.
+// Which of a block's cycle keys use an exercise (in cycle order); for the library detail page.
 export function usedOn(exId, block) {
   const days = state.daysFiles[block.days_file] || {};
-  return WEEKDAYS.filter((d) => days[d]?.sections.some((s) => s.items.some((it) => it.ex === exId)));
+  return [...new Set(S.cycleKeys(block))].filter((d) => days[d]?.sections.some((s) => s.items.some((it) => it.ex === exId)));
 }

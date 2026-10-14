@@ -1,16 +1,18 @@
 // Training log: form, history, CSV export/import. Stored in IndexedDB on the device.
-import { state, blockFor, weekdayOf, todayISO, fmtDate, DAY_LABEL, WEEKDAYS } from '../data.js';
+import { currentSession, act, blockById, planFor, schedule as S, todayISO, fmtDate, DAY_LABEL } from '../data.js';
 import { ICON } from '../icons.js';
 import { logAll, logPut, logDelete } from '../db.js';
 import { esc, el, toast, download } from '../util.js';
 
-const COLS = ['date', 'block_id', 'week', 'day', 'session', 'rpe_target', 'rpe_hit', 'weights', 'notes'];
+// "week" is the cycle number within the block. Entries from before the rolling
+// schedule have no session_number and export with status "done".
+const COLS = ['date', 'block_id', 'week', 'day', 'session_number', 'session', 'status', 'rpe_target', 'rpe_hit', 'weights', 'notes'];
 
 const csvCell = (v) => { const s = String(v ?? ''); return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
 
 export function toCSV(entries) {
   const rows = [...entries].sort((a, b) => a.date.localeCompare(b.date) || a.id - b.id);
-  return [COLS.join(','), ...rows.map((e) => COLS.map((c) => csvCell(e[c])).join(','))].join('\r\n') + '\r\n';
+  return [COLS.join(','), ...rows.map((e) => COLS.map((c) => csvCell(c === 'status' ? (e.status || 'done') : e[c])).join(','))].join('\r\n') + '\r\n';
 }
 
 export function parseCSV(text) {
@@ -45,38 +47,44 @@ async function importLog(file) {
   let added = 0;
   for (const r of rows) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(r.date)) continue;
-    r.week = r.week === '' ? '' : Number(r.week);
+    for (const k of ['week', 'session_number']) r[k] = r[k] === '' ? '' : Number(r[k]);
     if (seen.has(key(r))) continue;
     await logPut({ ...r, created: new Date().toISOString() }); seen.add(key(r)); added++;
   }
   toast(`Imported ${added} entr${added === 1 ? 'y' : 'ies'}${rows.length - added ? `, skipped ${rows.length - added} already in the log` : ''}.`);
 }
 
-function sessionOptions(date, selected) {
-  const info = blockFor(date);
-  const days = info ? state.daysFiles[info.block.days_file] : {};
-  return WEEKDAYS.map((d) => `<option value="${d}"${d === selected ? ' selected' : ''}>${DAY_LABEL[d]}: ${esc(days?.[d]?.title || '')}</option>`).join('');
+function sessionOptions(block, selected) {
+  return Array.from({ length: S.totalSessions(block) }, (_, i) => {
+    const n = i + 1, plan = planFor(block, S.keyOf(block, n));
+    return `<option value="${n}"${n === selected ? ' selected' : ''}>Session ${n} · ${esc(plan?.title || '')}</option>`;
+  }).join('');
 }
 
 export async function renderLogForm(params, editId) {
   let entry = null;
   if (editId) entry = (await logAll()).find((e) => e.id === Number(editId));
+  const cur = await currentSession();
+  const block = blockById(entry?.block_id || params.get('block')) || (entry ? null : cur.block);
+  const n = Number(entry?.session_number || params.get('n')) || (entry ? null : Math.min(cur.n, cur.total));
   const date = entry?.date || params.get('date') || todayISO();
-  const day = entry?.day || params.get('day') || weekdayOf(date);
   const root = el(`
     <div class="log-form">
       <h1>${entry ? 'Edit log entry' : 'Log a session'}</h1>
       <form>
         <label>Date<input type="date" name="date" value="${esc(date)}" required></label>
-        <p class="kicker block-info"></p>
-        <label>Session<select name="day">${sessionOptions(date, day)}</select></label>
+        ${block
+          ? `<label>Session (Block ${esc(S.blockLabel(block))})<select name="n">${sessionOptions(block, n)}</select></label>`
+          : `<p><b>${esc(entry?.session || '')}</b><br><span class="muted small">${esc(entry?.block_id || '')} · not in the current program</span></p>`}
         <p class="kicker rpe-target"></p>
+        ${entry ? `<label>Status<select name="status"><option value="done"${entry.status !== 'skipped' ? ' selected' : ''}>Done</option><option value="skipped"${entry.status === 'skipped' ? ' selected' : ''}>Skipped</option></select></label>` : ''}
         <fieldset class="rpe">
           <legend>RPE hit</legend>
           <div class="rpe-grid">${Array.from({ length: 10 }, (_, i) => `<label><input type="radio" name="rpe_hit" value="${i + 1}"${String(entry?.rpe_hit) === String(i + 1) ? ' checked' : ''}><span>${i + 1}</span></label>`).join('')}</div>
         </fieldset>
-        <label>Weights<textarea name="weights" rows="3" placeholder="e.g. Trap bar 3x8 @ 60 kg; goblet squat 20 kg">${esc(entry?.weights || '')}</textarea></label>
+        <label>Weights<textarea name="weights" rows="3" placeholder="e.g. Trap bar 2x8 @ 60 kg; goblet squat 20 kg">${esc(entry?.weights || '')}</textarea></label>
         <label>Notes<textarea name="notes" rows="4" placeholder="Anything that felt off">${esc(entry?.notes || '')}</textarea></label>
+        <p class="note good completes" hidden></p>
         <div class="form-actions">
           <button class="btn-primary btn-huge" type="submit">Save</button>
           <a class="btn" href="#/log">Cancel</a>
@@ -84,26 +92,35 @@ export async function renderLogForm(params, editId) {
       </form>
     </div>`);
   const f = root.querySelector('form');
+  // A new entry for the current session completes it (same as Done).
+  const completes = () => !entry && block && block.id === cur.block.id && Number(f.n.value) === cur.n && !cur.finished;
   const refresh = () => {
-    const d = f.date.value, info = blockFor(d);
-    const plan = info && state.daysFiles[info.block.days_file]?.[f.day.value];
-    root.querySelector('.block-info').textContent = info ? `${info.block.id} · Block ${info.index + 1}, Week ${info.week}` : '';
-    root.querySelector('.rpe-target').textContent = plan ? `Target RPE ${plan.rpe}` : '';
+    const plan = block && planFor(block, S.keyOf(block, Number(f.n.value)));
+    root.querySelector('.rpe-target').textContent = plan ? `Target RPE ${plan.rpe} · Cycle ${S.cycleOf(block, Number(f.n.value))}` : '';
+    const c = root.querySelector('.completes');
+    c.hidden = !completes(); c.textContent = `Saving marks Session ${cur.n} done and moves Today to the next session.`;
   };
-  f.date.onchange = () => { const cur = f.day.value; f.day.innerHTML = sessionOptions(f.date.value, weekdayOf(f.date.value) || cur); refresh(); };
-  f.day.onchange = refresh;
+  if (f.n) f.n.onchange = refresh;
   refresh();
   f.onsubmit = async (e) => {
     e.preventDefault();
-    const d = f.date.value, info = blockFor(d), plan = state.daysFiles[info.block.days_file]?.[f.day.value];
-    const rec = {
-      ...(entry || {}),
-      date: d, block_id: info.block.id, week: info.week, day: f.day.value, session: plan?.title || '',
-      rpe_target: plan?.rpe || '', rpe_hit: f.rpe_hit.value || '', weights: f.weights.value.trim(), notes: f.notes.value.trim(),
+    const rec = { ...(entry || {}) };
+    if (block) {
+      const sn = Number(f.n.value), day = S.keyOf(block, sn), plan = planFor(block, day);
+      Object.assign(rec, { block_id: block.id, session_number: sn, week: S.cycleOf(block, sn), day, session: plan?.title || '', rpe_target: plan?.rpe || '' });
+    }
+    Object.assign(rec, {
+      date: f.date.value, status: f.status?.value || rec.status || 'done',
+      rpe_hit: f.rpe_hit.value || '', weights: f.weights.value.trim(), notes: f.notes.value.trim(),
       created: entry?.created || new Date().toISOString(),
-    };
-    try { await logPut(rec); toast('Saved.'); location.hash = '#/log'; }
-    catch (err) { toast(`Could not save: ${err.message}`); }
+    });
+    try {
+      const willComplete = completes();
+      await logPut(rec);
+      if (willComplete) await act('complete');
+      toast(willComplete ? `Saved. Session ${rec.session_number} done.` : 'Saved.');
+      location.hash = willComplete ? '#/today' : '#/log';
+    } catch (err) { toast(`Could not save: ${err.message}`); }
   };
   return root;
 }
@@ -123,8 +140,8 @@ export async function renderLog() {
       <ul class="log-list">${entries.map((e) => `
         <li>
           <a href="#/log/edit/${e.id}">
-            <span class="log-date">${esc(fmtDate(e.date))}<small>${esc(e.block_id)} · wk ${esc(e.week)}</small></span>
-            <span class="log-main"><b>${esc(e.session || DAY_LABEL[e.day] || '')}</b>
+            <span class="log-date">${esc(fmtDate(e.date))}<small>${esc(e.block_id)}${e.session_number ? ` · #${esc(e.session_number)}` : ` · wk ${esc(e.week)}`}</small></span>
+            <span class="log-main"><b>${esc(e.session || DAY_LABEL[e.day] || '')}</b>${e.status === 'skipped' ? ' <span class="chip chip-skip">Skipped</span>' : ''}
               <small>RPE ${esc(e.rpe_hit || '–')} / target ${esc(e.rpe_target || '–')}</small>
               ${e.weights ? `<small>${esc(e.weights)}</small>` : ''}
               ${e.notes ? `<small class="muted">${esc(e.notes)}</small>` : ''}

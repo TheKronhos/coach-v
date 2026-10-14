@@ -251,3 +251,18 @@ legend { font-weight: 700; margin-bottom: 6px; }
   box-shadow: 0 6px 24px rgba(0,0,0,.5);
 }
 .toast-action { display: flex; align-items: center; gap: 12px; }
+
+/* ---- rolling schedule ---- */
+.kicker.sub { margin-top: 2px; }
+.queue-actions { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 14px 0 4px; }
+@media (min-width: 560px) { .queue-actions { grid-template-columns: 2fr 1fr; } }
+.queue-actions .btn { min-height: 68px; font-size: 1.15rem; }
+.chip-done { background: #0C3B2B; border-color: var(--teal); color: #BFF5DF; }
+.chip-skip { background: #3B2A00; border-color: var(--amber); color: #FFE3B0; font-size: .8rem; padding: 2px 8px; }
+.note.good { border-left-color: var(--teal); }
+.note.restart { border-left-color: var(--amber); background: #2A1F07; }
+.note.restart p { margin-top: 0; }
+.week-head-plain { padding: 4px 0 4px; }
+.cycle-h { color: var(--red); margin: 18px 0 4px; }
+.day.is-done a { opacity: .6; }
+.day.is-done .day-meta { color: var(--teal); }

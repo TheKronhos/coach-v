@@ -22,3 +22,16 @@ export function download(filename, text, type = 'text/csv') {
 }
 
 export const cap = (s) => (s ? s[0].toUpperCase() + s.slice(1) : '');
+
+// Toast with buttons, e.g. [{ label: 'Undo', onClick }]. Stays up longer than a plain toast.
+export function toastActions(msg, actions, ms = 8000) {
+  document.querySelectorAll('.toast').forEach((t) => t.remove());
+  const t = el(`<div class="toast toast-action" role="status"><span>${esc(msg)}</span></div>`);
+  for (const a of actions) {
+    const b = el(`<button class="btn">${esc(a.label)}</button>`);
+    b.onclick = async () => { t.remove(); await a.onClick(); };
+    t.appendChild(b);
+  }
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), ms);
+}

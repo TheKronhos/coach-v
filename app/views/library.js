@@ -1,5 +1,5 @@
 // Exercise library (browse by category) and single-exercise detail.
-import { state, blockFor, todayISO, usedOn, DAY_LABEL } from '../data.js';
+import { state, activeBlock, usedOn, planFor } from '../data.js';
 import { frameSVG, DARK_THEME } from '../../src/pose-renderer.js';
 import { posePlayer } from '../components/pose-player.js';
 import { esc, el, cap } from '../util.js';
@@ -36,11 +36,11 @@ export function renderLibrary(active = 'all') {
   return root;
 }
 
-export function renderExercise(id) {
+export async function renderExercise(id) {
   const ex = state.library[id];
   if (!ex) return el(`<p class="empty">Unknown exercise "${esc(id)}". <a href="#/library">Back to library</a></p>`);
-  const info = blockFor(todayISO());
-  const days = info ? usedOn(id, info.block) : [];
+  const block = await activeBlock();
+  const days = usedOn(id, block).map((k) => planFor(block, k)?.title).filter((t, i, a) => t && a.indexOf(t) === i);
   const root = el(`
     <div class="exercise">
       <p class="kicker"><a href="#/library/${encodeURIComponent(ex.category)}">◀ ${esc(cap(ex.category))}</a></p>
@@ -51,7 +51,7 @@ export function renderExercise(id) {
           ${ex.default_dose ? `<p class="dose">${esc(ex.default_dose)}</p>` : ''}
           <p class="view">${esc(ex.view || '')}</p>
           <ol class="cues">${(ex.cues || []).map((c) => `<li>${esc(c)}</li>`).join('')}</ol>
-          ${days.length ? `<p class="used">Used on: ${days.map((d) => `<a href="#/day/${d}">${DAY_LABEL[d]}</a>`).join(', ')}</p>` : ''}
+          ${days.length ? `<p class="used">Used in: ${days.map((t) => esc(t)).join(', ')}</p>` : ''}
           <p class="muted small">Positions: ${ex.frames.map((f) => esc(f[0])).join(' → ')}</p>
         </div>
       </article>

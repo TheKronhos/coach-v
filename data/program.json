@@ -472,11 +472,10 @@
   "data_version": "1.1",
   "blocks": [
     {
-      "id": "block-1",
-      "name": "Weeks 1-2: Foundations",
-      "start": "2026-09-27",
-      "end": "2026-10-10",
-      "days_file": "days.json",
+      "id": "block-1r",
+      "cycles": 2,
+      "cycle": ["monday", "wednesday", "tuesday", "thursday", "friday", "saturday", "rest"],
+      "days_file": "days-block-1r.json",
       "check_in": "Export your log and check in with Coach V for Block 2."
     }
   ],

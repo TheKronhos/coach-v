@@ -1,6 +1,6 @@
 // Service worker: precache everything the app needs, serve cache-first, work fully offline.
 // Bump CACHE_VERSION (and APP_VERSION in app/version.js) whenever any file below changes.
-const CACHE_VERSION = 'coach-v-1.1';
+const CACHE_VERSION = 'coach-v-1.2';
 
 const PRECACHE = [
   './',
@@ -13,6 +13,7 @@ const PRECACHE = [
   'icons/apple-touch-icon.png',
   'data/program.json',
   'data/days.json',
+  'data/days-block-1r.json',
   'data/library.json',
   'data/footwork.json',
   'src/pose-renderer.js',
@@ -20,6 +21,7 @@ const PRECACHE = [
   'app/data.js',
   'app/db.js',
   'app/validate.js',
+  'app/schedule.js',
   'app/util.js',
   'app/icons.js',
   'app/version.js',
@@ -27,6 +29,7 @@ const PRECACHE = [
   'app/components/footwork.js',
   'app/components/timer.js',
   'app/views/session.js',
+  'app/views/today.js',
   'app/views/week.js',
   'app/views/library.js',
   'app/views/log.js',

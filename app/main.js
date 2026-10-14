@@ -1,7 +1,7 @@
 // App shell: boot, hash router, check-in banner, service worker.
-import { state, loadData, sessionFor, sessionForDay, todayISO, lastBlock, blockFor, WEEKDAYS, addDays, weekStart } from './data.js';
+import { state, loadData, currentSession, todayISO } from './data.js';
 import { ICON } from './icons.js';
-import { renderSession } from './views/session.js';
+import { renderToday, renderSessionN } from './views/today.js';
 import { renderWeek } from './views/week.js';
 import { renderLibrary, renderExercise } from './views/library.js';
 import { renderLog, renderLogForm, exportLog } from './views/log.js';
@@ -15,9 +15,9 @@ const view = document.getElementById('view');
 const banner = document.getElementById('banner');
 
 const routes = [
-  [/^\/?$|^\/today$/, () => renderSession(sessionFor(todayISO()), { isToday: true }), 'today'],
-  [/^\/day\/(\w+)(?:\/(\d{4}-\d{2}-\d{2}))?$/, (_, day, date) => renderSession(sessionForDay(day, date || dateInThisWeek(day))), 'week'],
-  [/^\/week(?:\/(\d{4}-\d{2}-\d{2}))?$/, (_, date) => renderWeek(date || todayISO()), 'week'],
+  [/^\/?$|^\/today$/, () => renderToday(), 'today'],
+  [/^\/session\/(\d+)$/, (_, n) => renderSessionN(n), 'week'],
+  [/^\/week$/, () => renderWeek(), 'week'],
   [/^\/library(?:\/([^/]+))?$/, (_, cat) => renderLibrary(cat ? decodeURIComponent(cat) : 'all'), 'library'],
   [/^\/ex\/([\w-]+)$/, (_, id) => renderExercise(id), 'library'],
   [/^\/timer$/, () => renderTimerPage(), 'timer'],
@@ -25,11 +25,8 @@ const routes = [
   [/^\/log\/new$/, (params) => renderLogForm(params), 'log'],
   [/^\/log\/edit\/(\d+)$/, (params, id) => renderLogForm(params, id), 'log'],
   [/^\/settings$/, () => renderSettings(), 'settings'],
-  [/^\/print\/(\w+)(?:\/(\d{4}-\d{2}-\d{2}))?$/, (_, day, date) => renderPrint(day, date || dateInThisWeek(day)), 'print'],
+  [/^\/print\/(\w+)$/, (_, day) => renderPrint(day), 'print'],
 ];
-
-// The date of `day` in the current Sunday-to-Saturday week.
-const dateInThisWeek = (day) => addDays(weekStart(todayISO()), WEEKDAYS.indexOf(day));
 
 function renderTimerPage() {
   const root = el(`
@@ -48,13 +45,13 @@ function decorateShell() {
   document.querySelector('.appbar [href="#/settings"]').innerHTML = ICON.settings;
 }
 
-function renderBanner() {
-  const lb = lastBlock();
-  const info = blockFor(todayISO());
-  if (!lb || info?.status !== 'ended') { banner.hidden = true; banner.innerHTML = ''; return; }
+// Persistent check-in banner once the last block's sessions are all done.
+async function renderBanner() {
+  const c = await currentSession();
+  if (!c.finished) { banner.hidden = true; banner.innerHTML = ''; return; }
   banner.hidden = false;
   banner.innerHTML = '';
-  const b = el(`<div class="checkin" role="status"><p><b>${esc(lb.name)} is complete.</b> ${esc(lb.check_in || '')}</p><button class="btn-primary">Export log</button></div>`);
+  const b = el(`<div class="checkin" role="status"><p><b>Block ${esc(c.label)} is complete.</b> ${esc(c.block.check_in || '')}</p><button class="btn-primary">Export log</button></div>`);
   b.querySelector('button').onclick = exportLog;
   banner.appendChild(b);
 }
@@ -78,7 +75,7 @@ async function route() {
     document.body.dataset.tab = tab;
     document.querySelectorAll('.tabs a').forEach((a) => a.classList.toggle('on', a.dataset.tab === tab));
     view.replaceChildren(node);
-    renderBanner();
+    await renderBanner();
     window.scrollTo(0, 0);
     return;
   }

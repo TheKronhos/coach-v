@@ -1,6 +1,6 @@
 // Printable day guide, laid out like the reference PDFs: section headers, exercise text on
 // the left, print frames (with dashed ghost + red arrow) on the right, legend footer.
-import { state, blockFor, blockDatesFor, todayISO, fmtDate, exerciseFor, footworkFor, DAY_LABEL, WEEKDAYS } from '../data.js';
+import { state, activeBlock, exerciseFor, footworkFor, schedule as S } from '../data.js';
 import { printFrameSVG, THEME } from '../../src/pose-renderer.js';
 import { resolveFrames, panelSVG, FW_LIGHT } from '../components/footwork.js';
 import { esc, el } from '../util.js';
@@ -41,27 +41,26 @@ function fwBlock(item) {
     </div>`;
 }
 
-// Recovery days with identical sections print as one combined guide (Tue & Fri).
-function twinDays(days, day) {
+// Recovery entries in the block's cycle with identical sections print as one combined guide.
+function twinDays(days, day, keys) {
   const plan = days[day];
   if (!plan?.recovery) return [day];
   const sig = JSON.stringify(plan.sections);
-  return WEEKDAYS.filter((d) => days[d]?.recovery && JSON.stringify(days[d].sections) === sig);
+  return keys.filter((d) => days[d]?.recovery && JSON.stringify(days[d].sections) === sig);
 }
 
-export function renderPrint(day, date = todayISO()) {
-  const info = blockFor(date);
-  const days = state.daysFiles[info.block.days_file];
-  const group = twinDays(days, day);
+export async function renderPrint(day) {
+  const block = await activeBlock();
+  const days = state.daysFiles[block.days_file];
+  const keys = [...new Set(S.cycleKeys(block))];
+  const group = twinDays(days, day, keys.includes(day) ? keys : [day]);
   const plan = days[group[0]];
-  const names = group.map((d) => DAY_LABEL[d]).join(' & ');
-  const title = `${names}: ${plan.title}`;
-  const md = (d) => fmtDate(d, { month: 'short', day: 'numeric' });
-  const blockLabel = info.block.name.split(':')[0];
-  const dates = group.length > 1
-    ? group.map((d) => `${DAY_LABEL[d].slice(0, 3)} ${blockDatesFor(info.block, d).map(md).join(', ')}`).join('; ')
-    : blockDatesFor(info.block, day).map(md).join(', ');
-  const emphasis = group.map((d) => days[d].emphasis ? `${group.length > 1 ? `${DAY_LABEL[d]}: ` : ''}${days[d].emphasis}` : '').filter(Boolean).join(' ');
+  const title = plan.title;
+  // Session numbers in the block for a cycle key, e.g. "3, 10".
+  const nums = (d) => Array.from({ length: S.totalSessions(block) }, (_, i) => i + 1).filter((n) => S.keyOf(block, n) === d);
+  const sessions = group.flatMap(nums).sort((x, y) => x - y).join(', ');
+  // Twins keep their own emphasis line, labelled by their session numbers.
+  const emphasis = group.map((d) => days[d].emphasis ? `${group.length > 1 ? `Sessions ${nums(d).join(', ')}: ` : ''}${days[d].emphasis}` : '').filter(Boolean).join(' ');
 
   const body = plan.sections.map((sec) => {
     let out = `<section class="p-sec"><h2>${esc(sec.name)}</h2>${sec.format ? `<p class="p-format">${esc(sec.format)}</p>` : ''}`;
@@ -77,7 +76,7 @@ export function renderPrint(day, date = todayISO()) {
   const root = el(`
     <div class="print-view">
       <div class="print-toolbar no-print">
-        <a class="btn" href="#/day/${esc(day)}">◀ Back</a>
+        <button class="btn back-btn">◀ Back</button>
         <button class="btn-primary print-btn">Print</button>
       </div>
       <div class="paper">
@@ -87,7 +86,7 @@ export function renderPrint(day, date = todayISO()) {
           <tfoot><tr><td><div class="p-space-bottom"></div></td></tr></tfoot>
           <tbody><tr><td>
             <h1>${esc(title)}</h1>
-            <p class="p-meta">${esc(blockLabel)}: ${esc(dates)} &nbsp;|&nbsp; RPE ${esc(plan.rpe)} &nbsp;|&nbsp; ${esc(plan.minutes)} min</p>
+            <p class="p-meta">Block ${esc(S.blockLabel(block))}, session${sessions.includes(',') ? 's' : ''} ${esc(sessions)}${plan.rpe && plan.rpe !== '-' ? ` &nbsp;|&nbsp; RPE ${esc(plan.rpe)}` : ''}${plan.minutes && plan.minutes !== '0' ? ` &nbsp;|&nbsp; ${esc(plan.minutes)} min` : ''}</p>
             ${emphasis ? `<p class="p-emph">${esc(emphasis)}</p>` : ''}
             ${plan.safety ? `<p class="p-safety"><b>Safety:</b> ${esc(plan.safety)}</p>` : ''}
             ${body}
@@ -96,6 +95,7 @@ export function renderPrint(day, date = todayISO()) {
       </div>
     </div>`);
   root.querySelector('.print-btn').onclick = () => window.print();
+  root.querySelector('.back-btn').onclick = () => (history.length > 1 ? history.back() : (location.hash = '#/today'));
   document.title = `Coach V – ${title}`;
   return root;
 }

@@ -1,5 +1,5 @@
 // Renders one day's session: header (block/week, RPE, time), then every section in order.
-import { state, exerciseFor, footworkFor, fmtDate, DAY_LABEL } from '../data.js';
+import { state, exerciseFor, footworkFor, relDate, planFor, schedule as S } from '../data.js';
 import { ICON } from '../icons.js';
 import { posePlayer } from '../components/pose-player.js';
 import { footworkPlayer } from '../components/footwork.js';
@@ -7,6 +7,9 @@ import { openTimer, settingsFrom } from '../components/timer.js';
 import { esc, el } from '../util.js';
 
 const mmss = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+
+// "Training", "Active recovery", or "Full rest" (a recovery day with no RPE target).
+export const sessionType = (plan) => (!plan?.recovery ? 'Training' : plan.rpe === '-' ? 'Full rest' : 'Active recovery');
 
 export function timerSummary(t) {
   const s = settingsFrom(t);
@@ -57,33 +60,55 @@ function fwItem(item) {
   return card;
 }
 
-// info = sessionFor(date) result. opts.header: 'today' | 'day'
-export function renderSession(info, { isToday = false } = {}) {
-  const { plan, block, index, week, status, date, day } = info;
+// One session of the active block.
+// info: { block, label, n, total, cycle, day, plan, plannedDate, today, finished, queue, ... }
+// opts.current: this is the next incomplete session (shows Done / Skip today)
+// opts.done:    already completed (read-only)
+// opts.onDone / onSkip / onRestart / onDismissRestart: handlers for the current session
+export function renderSession(info, opts = {}) {
+  const { plan, label, n, total, cycle, day, plannedDate, today, finished } = info;
   const root = el(`<div class="session"></div>`);
-  if (!plan) { root.innerHTML = `<p class="empty">No session found for ${esc(DAY_LABEL[day])} in ${esc(block.name)}.</p>`; return root; }
+  if (!plan) { root.innerHTML = `<p class="empty">No session "${esc(day)}" in block ${esc(label)}.</p>`; return root; }
+  const extra = n > total;
 
   const notes = [];
-  if (status === 'before') notes.push(`<p class="note">The program starts ${esc(fmtDate(block.start, { weekday: 'long', month: 'short', day: 'numeric' }))}. This is your first session.</p>`);
-  if (info.scheduleNote) notes.push(`<p class="note">${esc(info.scheduleNote)}</p>`);
+  if (opts.current && info.offerRestart) notes.push(`
+    <div class="note restart">
+      <p><b>It's been ${info.daysSinceDone} days since your last session.</b> Restart this cycle from its first session (${esc(planFor(info.block, S.cycleKeys(info.block)[0])?.title || 'session 1')})?</p>
+      <div class="head-actions"><button class="btn-primary act-restart">Restart cycle</button><button class="btn act-dismiss">Not now</button></div>
+    </div>`);
+  if (opts.current && !info.isDueToday) notes.push(info.queue.lastDoneOn === today
+    ? '<p class="note good">Today\'s session is done. This is up next, planned for tomorrow.</p>'
+    : '<p class="note">Skipped today. This session moves to tomorrow, and everything after it shifts a day.</p>');
+  if (extra) notes.push('<p class="note">Block complete. Extra sessions repeat the cycle until your next block is imported.</p>');
   if (plan.emphasis) notes.push(`<p class="note">${esc(plan.emphasis)}</p>`);
   if (plan.safety) notes.push(`<p class="note warn"><b>Safety:</b> ${esc(plan.safety)}</p>`);
 
+  const when = opts.done ? 'Done' : plannedDate ? relDate(plannedDate, today) : '';
   const head = el(`
     <header class="session-head">
-      <p class="kicker">Block ${index + 1}, Week ${week} · ${esc(isToday && status !== 'before' ? 'Today' : DAY_LABEL[day])}${status !== 'before' ? ` · ${esc(fmtDate(date))}` : ''}</p>
+      <p class="kicker">${extra ? `Block ${esc(label)} complete · Extra session` : `Block ${esc(label)}, Session ${n} of ${total}`}</p>
+      <p class="kicker sub">Cycle ${cycle}${when ? ` · ${esc(when)}` : ''}</p>
       <h1>${esc(plan.title)}</h1>
       <div class="chips">
-        <span class="chip chip-rpe">RPE ${esc(plan.rpe)}</span>
-        <span class="chip">${esc(plan.minutes)} min</span>
-        ${plan.recovery ? '<span class="chip chip-recovery">Active recovery</span>' : '<span class="chip chip-training">Training</span>'}
+        ${plan.rpe && plan.rpe !== '-' ? `<span class="chip chip-rpe">RPE ${esc(plan.rpe)}</span>` : ''}
+        ${plan.minutes && plan.minutes !== '0' ? `<span class="chip">${esc(plan.minutes)} min</span>` : ''}
+        <span class="chip ${plan.recovery ? 'chip-recovery' : 'chip-training'}">${esc(sessionType(plan))}</span>
+        ${opts.done ? '<span class="chip chip-done">✓ Done</span>' : ''}
       </div>
       ${notes.join('')}
+      ${opts.current ? `<div class="queue-actions">
+        <button class="btn-primary btn-huge act-done">Done</button>
+        ${info.isDueToday ? '<button class="btn act-skip">Skip today</button>' : ''}
+      </div>` : ''}
       <div class="head-actions">
-        <a class="btn" href="#/log/new?date=${esc(status === 'before' ? block.start : date)}&day=${esc(day)}">Log session</a>
-        <a class="btn" href="#/print/${esc(day)}/${esc(date)}">Print</a>
+        ${opts.current ? `<a class="btn" href="#/log/new?block=${esc(info.block.id)}&n=${n}">Log with details</a>` : ''}
+        <a class="btn" href="#/print/${esc(day)}">Print</a>
+        ${!opts.current && !finished ? '<a class="btn" href="#/today">Back to today</a>' : ''}
       </div>
     </header>`);
+  const on = (sel, fn) => { const b = head.querySelector(sel); if (b && fn) b.onclick = async () => { b.disabled = true; try { await fn(); } finally { b.disabled = false; } }; };
+  on('.act-done', opts.onDone); on('.act-skip', opts.onSkip); on('.act-restart', opts.onRestart); on('.act-dismiss', opts.onDismissRestart);
   root.appendChild(head);
 
   const jump = el(`<nav class="section-jump" aria-label="Sections">${plan.sections.map((s, i) => `<a href="#sec-${i}" data-sec="${i}">${esc(s.name)}</a>`).join('')}</nav>`);

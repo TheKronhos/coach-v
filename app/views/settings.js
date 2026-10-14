@@ -1,12 +1,12 @@
 // Settings: program blocks, "Import program update" (validated, stored in IndexedDB,
 // one-step undo), log export, storage status.
-import { state, importBundle, undoImport, blockFor, todayISO, fmtDate, level } from '../data.js';
+import { state, importBundle, undoImport, currentSession, act, schedule as S, level } from '../data.js';
 import { exportLog } from './log.js';
 import { esc, el, toast, cap } from '../util.js';
 import { APP_VERSION } from '../version.js';
 
 export async function renderSettings() {
-  const cur = blockFor(todayISO());
+  const cur = await currentSession();
   let persisted = null;
   try { persisted = await navigator.storage?.persisted?.(); } catch {}
   const ov = state.overlay;
@@ -19,12 +19,20 @@ export async function renderSettings() {
         <h2>Program</h2>
         <p>Athlete level: <b>${esc(cap(level()))}</b> · Stance: <b>${esc(cap(state.program.athlete?.stance || ''))}</b></p>
         <p class="muted small">Program data ${esc(state.program.data_version || '')}${ov ? ` + update ${esc(ov.data_version || '')} imported ${esc(new Date(ov.importedAt).toLocaleString())}` : ''}</p>
-        <ol class="blocks">${state.blocks.map((b, i) => `
-          <li class="${cur?.block.id === b.id ? 'is-current' : ''}">
-            <b>Block ${i + 1}: ${esc(b.name)}</b>
-            <small>${esc(fmtDate(b.start))} – ${esc(fmtDate(b.end))} · ${esc(b.days_file)}${cur?.block.id === b.id ? ` · ${esc(cur.status === 'ended' ? 'ended' : cur.status === 'before' ? 'up next' : 'current')}` : ''}</small>
-          </li>`).join('')}
+        <ol class="blocks">${state.blocks.map((b, i) => {
+          const isCur = cur.block.id === b.id, status = isCur ? (cur.finished ? 'complete' : `current · Session ${cur.n} of ${cur.total}`) : i < cur.index ? 'complete' : 'up next';
+          return `
+          <li class="${isCur ? 'is-current' : ''}">
+            <b>Block ${esc(S.blockLabel(b))}${b.name ? `: ${esc(b.name)}` : ''}</b>
+            <small>${b.cycles} cycle${b.cycles === 1 ? '' : 's'} · ${S.totalSessions(b)} sessions · ${esc(b.days_file)} · ${esc(status)}</small>
+          </li>`; }).join('')}
         </ol>
+      </section>
+
+      <section class="card">
+        <h2>Start over</h2>
+        <p class="muted small">Go back to Session 1 of Block ${esc(cur.label)}, starting today. Your log history is kept.</p>
+        <button class="btn start-over">Start over</button>
       </section>
 
       <section class="card">
@@ -48,6 +56,10 @@ export async function renderSettings() {
     </div>`);
 
   root.querySelector('.export').onclick = exportLog;
+  root.querySelector('.start-over').onclick = async () => {
+    if (!confirm(`Start over at Session 1 of Block ${cur.label}, beginning today?\n\nYour training log is kept.`)) return;
+    await act('startOver'); toast(`Back to Session 1 of Block ${cur.label}.`); location.hash = '#/today';
+  };
   root.querySelector('.check-update').onclick = async () => {
     const reg = await navigator.serviceWorker?.getRegistration();
     if (!reg) return toast('Offline support is not active in this browser.');
